@@ -2,7 +2,7 @@
 
 This project implements a **32-point FFT** using the **MDC-8 architecture**, optimized for parallel processing with low resource usage.
 
-![Block Diagram](docs/block_diagrams.jpg)
+![Block Diagram](docs/fft32_new_design.jpeg)
 
 ## Architecture
 
