@@ -13,32 +13,18 @@
 module fft32 #(
     parameter NB_DATA   = 8
 ) (
-    input                           i_clk,
-    input                           i_clk_en,
-    input                           i_rst,
-    input                           i_inverse,
+    input                       i_clk,
+    input                       i_clk_en,
+    input                       i_rst,
+    input                       i_inverse,
     ///////////////////// INPUTS  /////////////////////
-    input                           i_valid,
-    input  signed [NB_DATA - 1 : 0] i_data_re,
-    input  signed [NB_DATA - 1 : 0] i_data_im,
+    input                       i_valid,
+    input  signed [NB_DATA-1:0] i_data_re,
+    input  signed [NB_DATA-1:0] i_data_im,
     ///////////////////// OUTPUTS /////////////////////
-    output                          o_valid,
-    output signed [NB_DATA-1:0]     o_ff0_data0_re,
-    output signed [NB_DATA-1:0]     o_ff0_data0_im,
-    output signed [NB_DATA-1:0]     o_ff0_data1_re,
-    output signed [NB_DATA-1:0]     o_ff0_data1_im,
-    output signed [NB_DATA-1:0]     o_ff1_data0_re,
-    output signed [NB_DATA-1:0]     o_ff1_data0_im,
-    output signed [NB_DATA-1:0]     o_ff1_data1_re,
-    output signed [NB_DATA-1:0]     o_ff1_data1_im,
-    output signed [NB_DATA-1:0]     o_ff2_data0_re,
-    output signed [NB_DATA-1:0]     o_ff2_data0_im,
-    output signed [NB_DATA-1:0]     o_ff2_data1_re,
-    output signed [NB_DATA-1:0]     o_ff2_data1_im,
-    output signed [NB_DATA-1:0]     o_ff3_data0_re,
-    output signed [NB_DATA-1:0]     o_ff3_data0_im,
-    output signed [NB_DATA-1:0]     o_ff3_data1_re,
-    output signed [NB_DATA-1:0]     o_ff3_data1_im
+    output                      o_valid,
+    output signed [NB_DATA-1:0] o_data_re,
+    output signed [NB_DATA-1:0] o_data_im
 );
 
 wire signed [NB_DATA-1:0] shift_r4_data0_re;
@@ -290,22 +276,30 @@ assign mdc_ffx_valid = mdc_ff0_valid & mdc_ff1_valid & mdc_ff2_valid & mdc_ff3_v
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-assign o_ff0_data0_re = mdc_ff0_data0_re;
-assign o_ff0_data0_im = mdc_ff0_data0_im;
-assign o_ff0_data1_re = mdc_ff0_data1_re;
-assign o_ff0_data1_im = mdc_ff0_data1_im;
-assign o_ff1_data0_re = mdc_ff1_data0_re;
-assign o_ff1_data0_im = mdc_ff1_data0_im;
-assign o_ff1_data1_re = mdc_ff1_data1_re;
-assign o_ff1_data1_im = mdc_ff1_data1_im;
-assign o_ff2_data0_re = mdc_ff2_data0_re;
-assign o_ff2_data0_im = mdc_ff2_data0_im;
-assign o_ff2_data1_re = mdc_ff2_data1_re;
-assign o_ff2_data1_im = mdc_ff2_data1_im;
-assign o_ff3_data0_re = mdc_ff3_data0_re;
-assign o_ff3_data0_im = mdc_ff3_data0_im;
-assign o_ff3_data1_re = mdc_ff3_data1_re;
-assign o_ff3_data1_im = mdc_ff3_data1_im;
-assign o_valid = mdc_ffx_valid;
+buffer_parallel2serial #( .NB_DATA(8)) u_buffer_parallel2serial (
+    .i_clk      (i_clk),
+    .i_rst      (i_rst),
+    .i_clk_en   (i_clk_en),
+    .i_valid    (mdc_ffx_valid),
+    .i_data0_re (mdc_ff0_data0_re),
+    .i_data0_im (mdc_ff0_data0_im),
+    .i_data1_re (mdc_ff0_data1_re),
+    .i_data1_im (mdc_ff0_data1_im),
+    .i_data2_re (mdc_ff1_data0_re),
+    .i_data2_im (mdc_ff1_data0_im),
+    .i_data3_re (mdc_ff1_data1_re),
+    .i_data3_im (mdc_ff1_data1_im),
+    .i_data4_re (mdc_ff2_data0_re),
+    .i_data4_im (mdc_ff2_data0_im),
+    .i_data5_re (mdc_ff2_data1_re),
+    .i_data5_im (mdc_ff2_data1_im),
+    .i_data6_re (mdc_ff3_data0_re),
+    .i_data6_im (mdc_ff3_data0_im),
+    .i_data7_re (mdc_ff3_data1_re),
+    .i_data7_im (mdc_ff3_data1_im),
+    .o_data_re(o_data_re),
+    .o_data_im(o_data_im),
+    .o_valid(o_valid)
+);
 
 endmodule
