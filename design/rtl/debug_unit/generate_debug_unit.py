@@ -5,16 +5,24 @@ NB_DATA = 8
 
 # Format: ("signal_name", address_integer)
 PROBE_LIST = [
-    ("monitor_status", 0x00),
-    ("fifo_level",     0x01),
-    ("tap_0",          0x02),
-    ("tap_1",          0x03)
+    # General status (0x00 - 0x0F)
+    ("status_flags",   0x00), # valid and ready bits
+    ("error_flags",    0x01), # clipping bits
+    
+    # Counters (0x02 - 0x0F)
+    ("cnt_inputs",     0x02),
+    ("cnt_outputs",    0x03),
+
+    # Data (0x04 - 0x0F)
+    ("last_out_re",    0x04), # last valid real data
+    ("last_out_im",    0x05), # last valid real data
+    ("mid_data_re",    0x06)  # intermediate data (twiddle, branch 0)
 ]
 
 # Format: ("signal_name", address_integer)
 CONTROL_LIST = [
-    ("sw_reset", 0x10),
-    ("mode",     0x11)
+    # Module settings (0x10 - 0x1F)
+    ("sys_config",     0x10)  # [0]: Enable, [1]: Inverse, [2]: Soft Reset
 ]
 
 OUTPUT_FILE = "debug_unit.v"

@@ -25,7 +25,8 @@ module fft32 #(
     ///////////////////// OUTPUTS /////////////////////
     output                      o_valid,
     output signed [NB_DATA-1:0] o_data_re,
-    output signed [NB_DATA-1:0] o_data_im
+    output signed [NB_DATA-1:0] o_data_im,
+    output signed [NB_DATA-1:0] o_debug_mid_re
 );
 
 wire signed [NB_DATA-1:0] shift_r4_data0_re;
@@ -174,6 +175,8 @@ twiddle_interface #( .NB_DATA(8), .NBF_DATA(7)) u_twiddle_interface (
     .o_data3_im (twiddle_data3_im),
     .o_valid    (twiddle_valid)
 );
+
+assign o_debug_mid_re = twiddle_data0_re;
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 

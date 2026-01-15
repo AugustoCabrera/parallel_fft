@@ -1,6 +1,74 @@
-module twiddle_interface #(
-    parameter NB_DATA  = 8,
-    parameter NBF_DATA = 7
+import numpy as np
+from fxpmath import Fxp
+
+NB_DATA = 8       
+NBF_DATA = 7      
+NUM_SAMPLES = 8   
+FFT_SIZE = 32    
+
+FXP_CONFIG = {
+    'signed': True,
+    'n_word': NB_DATA,
+    'n_frac': NBF_DATA,
+    'overflow': 'saturate',
+    'rounding': 'floor'
+}
+
+def to_fxp(value):
+    return Fxp(value, **FXP_CONFIG)
+
+def get_twiddle_bin_str(k, n, fft_size, inverse=False):
+    angle = -2 * np.pi * k * n / fft_size
+    complex_val = np.exp(1j * angle)
+    if inverse:
+        complex_val = complex_val.conjugate()
+    re_fxp = to_fxp(complex_val.real)
+    im_fxp = to_fxp(complex_val.imag)
+    return re_fxp.bin() + im_fxp.bin()
+
+def generate_mux_logic(values_list, signal_name, width):
+    """
+    Genera un assign gigante tipo MUX:
+    assign signal = (cnt == 0) ? VAL0 : (cnt == 1) ? VAL1 ... ;
+    """
+    lines = []
+    lines.append(f"assign {signal_name} = ")
+    for i, val in enumerate(values_list):
+        terminator = ";" if i == len(values_list) - 1 else ":"
+        condition = f"(cnt_q == 3'd{i})"
+        lines.append(f"        {condition} ? {width}'b{val} {terminator}")
+    return "\n".join(lines)
+
+def generate_rtl():
+    filename = "twiddle_interface.v"
+    width = 2 * NB_DATA
+    vals_w1_fwd = []
+    vals_w2_fwd = []
+    vals_w3_fwd = []
+    vals_w1_inv = []
+    vals_w2_inv = []
+    vals_w3_inv = []
+
+    for n in range(NUM_SAMPLES):
+        vals_w1_fwd.append(get_twiddle_bin_str(1, n, FFT_SIZE, False))
+        vals_w2_fwd.append(get_twiddle_bin_str(2, n, FFT_SIZE, False))
+        vals_w3_fwd.append(get_twiddle_bin_str(3, n, FFT_SIZE, False))
+        
+        vals_w1_inv.append(get_twiddle_bin_str(1, n, FFT_SIZE, True))
+        vals_w2_inv.append(get_twiddle_bin_str(2, n, FFT_SIZE, True))
+        vals_w3_inv.append(get_twiddle_bin_str(3, n, FFT_SIZE, True))
+
+    block_w1_fwd = generate_mux_logic(vals_w1_fwd, "val_w1_fwd", width)
+    block_w2_fwd = generate_mux_logic(vals_w2_fwd, "val_w2_fwd", width)
+    block_w3_fwd = generate_mux_logic(vals_w3_fwd, "val_w3_fwd", width)
+    
+    block_w1_inv = generate_mux_logic(vals_w1_inv, "val_w1_inv", width)
+    block_w2_inv = generate_mux_logic(vals_w2_inv, "val_w2_inv", width)
+    block_w3_inv = generate_mux_logic(vals_w3_inv, "val_w3_inv", width)
+
+    verilog_code = f"""module twiddle_interface #(
+    parameter NB_DATA  = {NB_DATA},
+    parameter NBF_DATA = {NBF_DATA}
 )(
     input                      i_clk,
     input                      i_rst,
@@ -34,61 +102,13 @@ wire signed [NB_DATA-1:0] mult3_re, mult3_im;
 wire [2*NB_DATA-1:0] val_w1_fwd, val_w2_fwd, val_w3_fwd;
 wire [2*NB_DATA-1:0] val_w1_inv, val_w2_inv, val_w3_inv;
 
-assign val_w1_fwd = 
-        (cnt_q == 3'd0) ? 16'b0111111100000000 :
-        (cnt_q == 3'd1) ? 16'b0111110111100111 :
-        (cnt_q == 3'd2) ? 16'b0111011011001111 :
-        (cnt_q == 3'd3) ? 16'b0110101010111000 :
-        (cnt_q == 3'd4) ? 16'b0101101010100101 :
-        (cnt_q == 3'd5) ? 16'b0100011110010101 :
-        (cnt_q == 3'd6) ? 16'b0011000010001001 :
-        (cnt_q == 3'd7) ? 16'b0001100010000010 ;
-assign val_w2_fwd = 
-        (cnt_q == 3'd0) ? 16'b0111111100000000 :
-        (cnt_q == 3'd1) ? 16'b0111011011001111 :
-        (cnt_q == 3'd2) ? 16'b0101101010100101 :
-        (cnt_q == 3'd3) ? 16'b0011000010001001 :
-        (cnt_q == 3'd4) ? 16'b0000000010000000 :
-        (cnt_q == 3'd5) ? 16'b1100111110001001 :
-        (cnt_q == 3'd6) ? 16'b1010010110100101 :
-        (cnt_q == 3'd7) ? 16'b1000100111001111 ;
-assign val_w3_fwd = 
-        (cnt_q == 3'd0) ? 16'b0111111100000000 :
-        (cnt_q == 3'd1) ? 16'b0110101010111000 :
-        (cnt_q == 3'd2) ? 16'b0011000010001001 :
-        (cnt_q == 3'd3) ? 16'b1110011110000010 :
-        (cnt_q == 3'd4) ? 16'b1010010110100101 :
-        (cnt_q == 3'd5) ? 16'b1000001011100111 :
-        (cnt_q == 3'd6) ? 16'b1000100100110000 :
-        (cnt_q == 3'd7) ? 16'b1011100001101010 ;
+{block_w1_fwd}
+{block_w2_fwd}
+{block_w3_fwd}
 
-assign val_w1_inv = 
-        (cnt_q == 3'd0) ? 16'b0111111100000000 :
-        (cnt_q == 3'd1) ? 16'b0111110100011000 :
-        (cnt_q == 3'd2) ? 16'b0111011000110000 :
-        (cnt_q == 3'd3) ? 16'b0110101001000111 :
-        (cnt_q == 3'd4) ? 16'b0101101001011010 :
-        (cnt_q == 3'd5) ? 16'b0100011101101010 :
-        (cnt_q == 3'd6) ? 16'b0011000001110110 :
-        (cnt_q == 3'd7) ? 16'b0001100001111101 ;
-assign val_w2_inv = 
-        (cnt_q == 3'd0) ? 16'b0111111100000000 :
-        (cnt_q == 3'd1) ? 16'b0111011000110000 :
-        (cnt_q == 3'd2) ? 16'b0101101001011010 :
-        (cnt_q == 3'd3) ? 16'b0011000001110110 :
-        (cnt_q == 3'd4) ? 16'b0000000001111111 :
-        (cnt_q == 3'd5) ? 16'b1100111101110110 :
-        (cnt_q == 3'd6) ? 16'b1010010101011010 :
-        (cnt_q == 3'd7) ? 16'b1000100100110000 ;
-assign val_w3_inv = 
-        (cnt_q == 3'd0) ? 16'b0111111100000000 :
-        (cnt_q == 3'd1) ? 16'b0110101001000111 :
-        (cnt_q == 3'd2) ? 16'b0011000001110110 :
-        (cnt_q == 3'd3) ? 16'b1110011101111101 :
-        (cnt_q == 3'd4) ? 16'b1010010101011010 :
-        (cnt_q == 3'd5) ? 16'b1000001000011000 :
-        (cnt_q == 3'd6) ? 16'b1000100111001111 :
-        (cnt_q == 3'd7) ? 16'b1011100010010101 ;
+{block_w1_inv}
+{block_w2_inv}
+{block_w3_inv}
 
 wire [2*NB_DATA-1:0] w1_selected, w2_selected, w3_selected;
 
@@ -190,3 +210,11 @@ always @(posedge i_clk) begin
 end
 
 endmodule
+"""
+    with open(filename, "w") as f:
+        f.write(verilog_code)
+
+    print(f"RTL generated successfully: {filename}")
+
+if __name__ == "__main__":
+    generate_rtl()
