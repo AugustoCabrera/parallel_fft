@@ -1,7 +1,7 @@
 import numpy as np
 from fxpmath import Fxp
 
-NB_WORD = 10
+NB_WORD = 8
 NB_FRAC = 7
 NUM_SAMPLES = 8
 FFT_SIZE = 64
