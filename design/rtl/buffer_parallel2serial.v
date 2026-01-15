@@ -18,25 +18,25 @@ module buffer_parallel2serial #(
     input                       i_clk_en,
     input                       i_valid,
     input                       i_tx_ready,
-    input  signed [NB_DATA-1:0] i_data0_re,
-    input  signed [NB_DATA-1:0] i_data0_im,
-    input  signed [NB_DATA-1:0] i_data1_re,
-    input  signed [NB_DATA-1:0] i_data1_im,
-    input  signed [NB_DATA-1:0] i_data2_re,
-    input  signed [NB_DATA-1:0] i_data2_im,
-    input  signed [NB_DATA-1:0] i_data3_re,
-    input  signed [NB_DATA-1:0] i_data3_im,
-    input  signed [NB_DATA-1:0] i_data4_re,
-    input  signed [NB_DATA-1:0] i_data4_im,
-    input  signed [NB_DATA-1:0] i_data5_re,
-    input  signed [NB_DATA-1:0] i_data5_im,
-    input  signed [NB_DATA-1:0] i_data6_re,
-    input  signed [NB_DATA-1:0] i_data6_im,
-    input  signed [NB_DATA-1:0] i_data7_re,
-    input  signed [NB_DATA-1:0] i_data7_im,
-    output signed [NB_DATA-1:0] o_data_re,
-    output signed [NB_DATA-1:0] o_data_im,
-    output                      o_valid
+    input      signed [NB_DATA-1:0] i_data0_re,
+    input      signed [NB_DATA-1:0] i_data0_im,
+    input      signed [NB_DATA-1:0] i_data1_re,
+    input      signed [NB_DATA-1:0] i_data1_im,
+    input      signed [NB_DATA-1:0] i_data2_re,
+    input      signed [NB_DATA-1:0] i_data2_im,
+    input      signed [NB_DATA-1:0] i_data3_re,
+    input      signed [NB_DATA-1:0] i_data3_im,
+    input      signed [NB_DATA-1:0] i_data4_re,
+    input      signed [NB_DATA-1:0] i_data4_im,
+    input      signed [NB_DATA-1:0] i_data5_re,
+    input      signed [NB_DATA-1:0] i_data5_im,
+    input      signed [NB_DATA-1:0] i_data6_re,
+    input      signed [NB_DATA-1:0] i_data6_im,
+    input      signed [NB_DATA-1:0] i_data7_re,
+    input      signed [NB_DATA-1:0] i_data7_im,
+    output reg signed [NB_DATA-1:0] o_data_re,
+    output reg signed [NB_DATA-1:0] o_data_im,
+    output reg                  o_valid
 );
 
 reg signed [NB_DATA-1:0] mem_re [0:31];
@@ -72,8 +72,8 @@ always @(posedge i_clk) begin
                     mem_re[{batch_count, 3'd6}] <= i_data6_re; mem_im[{batch_count, 3'd6}] <= i_data6_im;
                     mem_re[{batch_count, 3'd7}] <= i_data7_re; mem_im[{batch_count, 3'd7}] <= i_data7_im;
                     if (batch_count == 2'd3) begin
-                        batch_count <= '0;
-                        read_ptr    <= '0;
+                        batch_count <= 0;
+                        read_ptr    <= 0;
                         state       <= S_WAIT_RDY;
                     end 
                     else begin
@@ -98,7 +98,7 @@ always @(posedge i_clk) begin
                 if (!i_tx_ready) begin
                     if (read_ptr == 5'd31) begin
                         state    <= S_LOADING;
-                        read_ptr <= '0;
+                        read_ptr <= 0;
                     end 
                     else begin
                         read_ptr <= read_ptr + 1'b1;

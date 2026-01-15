@@ -44,8 +44,8 @@ assign o_ready = (current_state == STATE_IDLE);
 always @(posedge i_clk or negedge i_rst_n) begin
     if (!i_rst_n) begin
         current_state <= STATE_IDLE;
-        current_cnt   <= '0;
-        current_shift <= '0;
+        current_cnt   <= 0;
+        current_shift <= 0;
         o_data        <= 1'b0;
     end 
     else begin

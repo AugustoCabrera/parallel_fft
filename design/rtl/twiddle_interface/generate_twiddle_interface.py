@@ -27,16 +27,13 @@ def get_twiddle_bin_str(k, n, fft_size, inverse=False):
     return re_fxp.bin() + im_fxp.bin()
 
 def generate_mux_logic(values_list, signal_name, width):
-    """
-    Genera un assign gigante tipo MUX:
-    assign signal = (cnt == 0) ? VAL0 : (cnt == 1) ? VAL1 ... ;
-    """
     lines = []
     lines.append(f"assign {signal_name} = ")
     for i, val in enumerate(values_list):
-        terminator = ";" if i == len(values_list) - 1 else ":"
+        terminator = ":" 
         condition = f"(cnt_q == 3'd{i})"
         lines.append(f"        {condition} ? {width}'b{val} {terminator}")
+    lines.append(f"        {width}'d0;") 
     return "\n".join(lines)
 
 def generate_rtl():

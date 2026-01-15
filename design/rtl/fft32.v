@@ -125,7 +125,7 @@ shift_r4 #( .NB_DATA(8)) u_shift_r4 (
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-fft4 #( .NB_INPUT.(8), .NBF_INPUT(7), .NB_OUTPUT(8), .NBF_OUTPUT.(7)) u_fft4 (
+fft4 #( .NB_INPUT(8), .NBF_INPUT(7), .NB_OUTPUT(8), .NBF_OUTPUT(7)) u_fft4 (
     .i_clk      (i_clk),
     .i_rst      (i_rst),
     .i_enable   (i_clk_en),

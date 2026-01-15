@@ -1,4 +1,4 @@
-module chip_top (
+module top_chip (
     input  wire i_clk,      
     input  wire i_rst_n,    
     input  wire i_serial_rx, 
@@ -60,7 +60,7 @@ tx_serializer #( .NB_DATA(8) ) u_tx (
     .i_valid    (fft_out_valid),
     .i_data_re  (fft_out_re),
     .i_data_im  (fft_out_im),
-    .o_tx_pin   (o_serial_tx),
+    .o_data     (o_serial_tx),
     .o_ready    (tx_ready)
 );
 
