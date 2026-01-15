@@ -35,18 +35,28 @@ def write_mem_file(filename, data):
             f.write(combined_bin + "\n")
 
 if __name__ == "__main__":
-    twiddles = {'w1': [], 'w2': [], 'w3': []}
-    for n in range(NUM_SAMPLES):
-        w1_complex = np.exp(-2j * np.pi * n / FFT_SIZE)
-        w2_complex = np.exp(-2j * np.pi * 2 * n / FFT_SIZE)
-        w3_complex = np.exp(-2j * np.pi * 3 * n / FFT_SIZE)
-        twiddles['w1'].append((to_fxp(w1_complex.real), to_fxp(w1_complex.imag)))
-        twiddles['w2'].append((to_fxp(w2_complex.real), to_fxp(w2_complex.imag)))
-        twiddles['w3'].append((to_fxp(w3_complex.real), to_fxp(w3_complex.imag)))
+    twiddles_fwd = {'w1': [], 'w2': [], 'w3': []}
+    twiddles_inv = {'w1': [], 'w2': [], 'w3': []}
 
-    write_mem_file("twiddle_w1.mem", twiddles['w1'])
-    write_mem_file("twiddle_w2.mem", twiddles['w2'])
-    write_mem_file("twiddle_w3.mem", twiddles['w3'])
+    for n in range(NUM_SAMPLES):
+        w1_c_fwd = np.exp(-2j * np.pi * n / FFT_SIZE)
+        w2_c_fwd = np.exp(-2j * np.pi * 2 * n / FFT_SIZE)
+        w3_c_fwd = np.exp(-2j * np.pi * 3 * n / FFT_SIZE)
+        w1_c_inv = w1_c_fwd.conjugate()
+        w2_c_inv = w2_c_fwd.conjugate()
+        w3_c_inv = w3_c_fwd.conjugate()
+        twiddles_fwd['w1'].append((to_fxp(w1_c_fwd.real), to_fxp(w1_c_fwd.imag)))
+        twiddles_fwd['w2'].append((to_fxp(w2_c_fwd.real), to_fxp(w2_c_fwd.imag)))
+        twiddles_fwd['w3'].append((to_fxp(w3_c_fwd.real), to_fxp(w3_c_fwd.imag)))
+        twiddles_inv['w1'].append((to_fxp(w1_c_inv.real), to_fxp(w1_c_inv.imag)))
+        twiddles_inv['w2'].append((to_fxp(w2_c_inv.real), to_fxp(w2_c_inv.imag)))
+        twiddles_inv['w3'].append((to_fxp(w3_c_inv.real), to_fxp(w3_c_inv.imag)))
+    write_mem_file("twiddle_w1_fwd.mem", twiddles_fwd['w1'])
+    write_mem_file("twiddle_w2_fwd.mem", twiddles_fwd['w2'])
+    write_mem_file("twiddle_w3_fwd.mem", twiddles_fwd['w3'])
+    write_mem_file("twiddle_w1_inv.mem", twiddles_inv['w1'])
+    write_mem_file("twiddle_w2_inv.mem", twiddles_inv['w2'])
+    write_mem_file("twiddle_w3_inv.mem", twiddles_inv['w3'])
 
     inputs = {f'signal_{i}': [] for i in range(4)}
     for i in range(4):
@@ -54,17 +64,21 @@ if __name__ == "__main__":
             real, imag = np.random.uniform(-1.0, 1.0, 2)
             inputs[f'signal_{i}'].append((to_fxp(real), to_fxp(imag)))
         write_mem_file(f'input_signal_{i}.txt', inputs[f'signal_{i}'])
+    outputs_fwd = {f'signal_{i}': [] for i in range(4)}
+    outputs_inv = {f'signal_{i}': [] for i in range(4)}
 
-    outputs = {f'signal_{i}': [] for i in range(4)}
     for n in range(NUM_SAMPLES):
-        outputs['signal_0'].append(inputs['signal_0'][n])
-        
-        outputs['signal_1'].append(fxp_complex_mult_bit_accurate(*inputs['signal_1'][n], *twiddles['w1'][n]))
-        outputs['signal_2'].append(fxp_complex_mult_bit_accurate(*inputs['signal_2'][n], *twiddles['w2'][n]))
-        outputs['signal_3'].append(fxp_complex_mult_bit_accurate(*inputs['signal_3'][n], *twiddles['w3'][n]))
+        outputs_fwd['signal_0'].append(inputs['signal_0'][n])
+        outputs_inv['signal_0'].append(inputs['signal_0'][n])
+        outputs_fwd['signal_1'].append(fxp_complex_mult_bit_accurate(*inputs['signal_1'][n], *twiddles_fwd['w1'][n]))
+        outputs_fwd['signal_2'].append(fxp_complex_mult_bit_accurate(*inputs['signal_2'][n], *twiddles_fwd['w2'][n]))
+        outputs_fwd['signal_3'].append(fxp_complex_mult_bit_accurate(*inputs['signal_3'][n], *twiddles_fwd['w3'][n]))
+        outputs_inv['signal_1'].append(fxp_complex_mult_bit_accurate(*inputs['signal_1'][n], *twiddles_inv['w1'][n]))
+        outputs_inv['signal_2'].append(fxp_complex_mult_bit_accurate(*inputs['signal_2'][n], *twiddles_inv['w2'][n]))
+        outputs_inv['signal_3'].append(fxp_complex_mult_bit_accurate(*inputs['signal_3'][n], *twiddles_inv['w3'][n]))
 
     for i in range(4):
-        write_mem_file(f'golden_output_{i}.txt', outputs[f'signal_{i}'])
+        write_mem_file(f'golden_output_fwd_{i}.txt', outputs_fwd[f'signal_{i}'])
+        write_mem_file(f'golden_output_inv_{i}.txt', outputs_inv[f'signal_{i}'])
 
-    print("Test vector generation complete!")
-
+    print("Test vector generation complete (FWD and INV sets created)!")
