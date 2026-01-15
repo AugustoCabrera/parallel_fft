@@ -19,6 +19,7 @@ module fft32 #(
     input                       i_inverse,
     ///////////////////// INPUTS  /////////////////////
     input                       i_valid,
+    input                       i_tx_ready,
     input  signed [NB_DATA-1:0] i_data_re,
     input  signed [NB_DATA-1:0] i_data_im,
     ///////////////////// OUTPUTS /////////////////////
@@ -123,7 +124,7 @@ shift_r4 #( .NB_DATA(8)) u_shift_r4 (
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-fft4 #( .NB_INPUT.(8), .NBF_INPUT.(7), .NB_OUTPUT(8), .NBF_OUTPUT.(7)) u_fft4 (
+fft4 #( .NB_INPUT.(8), .NBF_INPUT(7), .NB_OUTPUT(8), .NBF_OUTPUT.(7)) u_fft4 (
     .i_clk      (i_clk),
     .i_rst      (i_rst),
     .i_enable   (i_clk_en),
@@ -303,6 +304,7 @@ buffer_parallel2serial #( .NB_DATA(8)) u_buffer_parallel2serial (
     .i_rst      (i_rst),
     .i_clk_en   (i_clk_en),
     .i_valid    (mdc_ffx_valid),
+    .i_tx_ready (i_tx_ready),
     .i_data0_re (mdc_ff0_data0_re),
     .i_data0_im (mdc_ff0_data0_im),
     .i_data1_re (mdc_ff0_data1_re),
