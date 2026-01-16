@@ -89,11 +89,11 @@ module fft8 #(
       .i_rst    (i_rst),
       .i_inverse(i_inverse),
       //----------------------------------------
-      .i_valid  (w_valid),
-      .i_data1_r(w_data0_r),
-      .i_data1_i(w_data0_i),
-      .i_data2_r(w_data1_r),
-      .i_data2_i(w_data1_i),
+      .i_valid  (i_valid),
+      .i_data1_r(i_data1_r),
+      .i_data1_i(i_data1_i),
+      .i_data2_r(i_data2_r),
+      .i_data2_i(i_data2_i),
       //----------------------------------------
       .o_valid  (w_st1_valid),
       .o_data1_r(w_st1_1r),
@@ -130,7 +130,7 @@ module fft8 #(
   // STAGE 3
   mdc8p_stage3 #(
       .NB_INPUT (NB_STAGE2),
-      .NB_OUTPUT(NB_STAGE3)
+      .NB_OUTPUT(NB_OUTPUT)
   ) u_mdc8p_stage3 (
       .i_clk    (i_clk),
       .i_inverse(i_inverse),

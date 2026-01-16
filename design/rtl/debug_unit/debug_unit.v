@@ -8,35 +8,103 @@ module debug_unit #(
   input  wire [NB_ADDR-1:0]   spi_addr,
   input  wire [NB_DATA-1:0]   spi_wdata,
   input  wire                 spi_wr_en,
+  input  wire                 spi_ss_n,
   output reg  [NB_DATA-1:0]   spi_rdata,
   // Probe Inputs
-  input  wire [NB_DATA-1:0]   monitor_status,
-  input  wire [NB_DATA-1:0]   fifo_level,
-  input  wire [NB_DATA-1:0]   tap_0,
-  input  wire [NB_DATA-1:0]   tap_1,
+  input  wire [NB_DATA-1:0]   status_flags,
+  input  wire [NB_DATA-1:0]   error_flags,
+  input  wire [NB_DATA-1:0]   cnt_inputs,
+  input  wire [NB_DATA-1:0]   cnt_outputs,
+  input  wire [NB_DATA-1:0]   last_out_re,
+  input  wire [NB_DATA-1:0]   last_out_im,
+  input  wire [NB_DATA-1:0]   mid_data_re,
   // Control Outputs
-  output reg  [NB_DATA-1:0]   sw_reset,
-  output reg  [NB_DATA-1:0]   mode
+
+  output reg  [NB_DATA-1:0]   sys_config
 );
 
 // Address Map
-localparam [NB_ADDR-1:0] ADDR_MONITOR_STATUS = 'h00;
-localparam [NB_ADDR-1:0] ADDR_FIFO_LEVEL = 'h01;
-localparam [NB_ADDR-1:0] ADDR_TAP_0 = 'h02;
-localparam [NB_ADDR-1:0] ADDR_TAP_1 = 'h03;
-localparam [NB_ADDR-1:0] ADDR_SW_RESET = 'h10;
-localparam [NB_ADDR-1:0] ADDR_MODE = 'h11;
+localparam [NB_ADDR-1:0] ADDR_STATUS_FLAGS = 'h00;
+localparam [NB_ADDR-1:0] ADDR_ERROR_FLAGS = 'h01;
+localparam [NB_ADDR-1:0] ADDR_CNT_INPUTS = 'h02;
+localparam [NB_ADDR-1:0] ADDR_CNT_OUTPUTS = 'h03;
+localparam [NB_ADDR-1:0] ADDR_LAST_OUT_RE = 'h04;
+localparam [NB_ADDR-1:0] ADDR_LAST_OUT_IM = 'h05;
+localparam [NB_ADDR-1:0] ADDR_MID_DATA_RE = 'h06;
+localparam [NB_ADDR-1:0] ADDR_SYS_CONFIG = 'h10;
+
+// CDC Synchronization (Snapshot)
+wire [NB_DATA-1:0] status_flags_sync;
+cdc_snapshot #(.DATA_WIDTH(NB_DATA)) u_cdc_status_flags (
+  .clk(clk),
+  .rst_n(rst_n),
+  .trigger_async_n(spi_ss_n),
+  .data_in(status_flags),
+  .data_out(status_flags_sync)
+);
+
+wire [NB_DATA-1:0] error_flags_sync;
+cdc_snapshot #(.DATA_WIDTH(NB_DATA)) u_cdc_error_flags (
+  .clk(clk),
+  .rst_n(rst_n),
+  .trigger_async_n(spi_ss_n),
+  .data_in(error_flags),
+  .data_out(error_flags_sync)
+);
+
+wire [NB_DATA-1:0] cnt_inputs_sync;
+cdc_snapshot #(.DATA_WIDTH(NB_DATA)) u_cdc_cnt_inputs (
+  .clk(clk),
+  .rst_n(rst_n),
+  .trigger_async_n(spi_ss_n),
+  .data_in(cnt_inputs),
+  .data_out(cnt_inputs_sync)
+);
+
+wire [NB_DATA-1:0] cnt_outputs_sync;
+cdc_snapshot #(.DATA_WIDTH(NB_DATA)) u_cdc_cnt_outputs (
+  .clk(clk),
+  .rst_n(rst_n),
+  .trigger_async_n(spi_ss_n),
+  .data_in(cnt_outputs),
+  .data_out(cnt_outputs_sync)
+);
+
+wire [NB_DATA-1:0] last_out_re_sync;
+cdc_snapshot #(.DATA_WIDTH(NB_DATA)) u_cdc_last_out_re (
+  .clk(clk),
+  .rst_n(rst_n),
+  .trigger_async_n(spi_ss_n),
+  .data_in(last_out_re),
+  .data_out(last_out_re_sync)
+);
+
+wire [NB_DATA-1:0] last_out_im_sync;
+cdc_snapshot #(.DATA_WIDTH(NB_DATA)) u_cdc_last_out_im (
+  .clk(clk),
+  .rst_n(rst_n),
+  .trigger_async_n(spi_ss_n),
+  .data_in(last_out_im),
+  .data_out(last_out_im_sync)
+);
+
+wire [NB_DATA-1:0] mid_data_re_sync;
+cdc_snapshot #(.DATA_WIDTH(NB_DATA)) u_cdc_mid_data_re (
+  .clk(clk),
+  .rst_n(rst_n),
+  .trigger_async_n(spi_ss_n),
+  .data_in(mid_data_re),
+  .data_out(mid_data_re_sync)
+);
 
 always @(posedge clk or negedge rst_n) begin
   if (!rst_n) begin
-    sw_reset <= {NB_DATA{1'b0}};
-    mode <= {NB_DATA{1'b0}};
+    sys_config <= {NB_DATA{1'b0}};
   end
   else begin
     if (spi_wr_en) begin
       case (spi_addr)
-        ADDR_SW_RESET: sw_reset <= spi_wdata;
-        ADDR_MODE: mode <= spi_wdata;
+        ADDR_SYS_CONFIG: sys_config <= spi_wdata;
       endcase
     end
   end
@@ -44,14 +112,16 @@ end
 
 always @(*) begin
   case (spi_addr)
-    // Probes
-    ADDR_MONITOR_STATUS: spi_rdata = monitor_status;
-    ADDR_FIFO_LEVEL: spi_rdata = fifo_level;
-    ADDR_TAP_0: spi_rdata = tap_0;
-    ADDR_TAP_1: spi_rdata = tap_1;
+    // Probes (Synchronized)
+    ADDR_STATUS_FLAGS: spi_rdata = status_flags_sync;
+    ADDR_ERROR_FLAGS: spi_rdata = error_flags_sync;
+    ADDR_CNT_INPUTS: spi_rdata = cnt_inputs_sync;
+    ADDR_CNT_OUTPUTS: spi_rdata = cnt_outputs_sync;
+    ADDR_LAST_OUT_RE: spi_rdata = last_out_re_sync;
+    ADDR_LAST_OUT_IM: spi_rdata = last_out_im_sync;
+    ADDR_MID_DATA_RE: spi_rdata = mid_data_re_sync;
     // Controls (Readback)
-    ADDR_SW_RESET: spi_rdata = sw_reset;
-    ADDR_MODE: spi_rdata = mode;
+    ADDR_SYS_CONFIG: spi_rdata = sys_config;
     default:      spi_rdata = {NB_DATA{1'b0}};
   endcase
 end

@@ -1,20 +1,20 @@
 // ----------------------------------------------------------------------------------------------------------------------------
-// Module Name: rnd.v
+// Module Name: clip_round.v
 // ----------------------------------------------------------------------------------------------------------------------------
 // Description:
 //
 // ----------------------------------------------------------------------------------------------------------------------------
 // Revision History:
-//      Date:         2026-01-03
+//      Date:         2026-01-13
 //      Author:       A. Lema
 //      Organization: Fundación Fulgor
 // ----------------------------------------------------------------------------------------------------------------------------
 
-module crnd#(
-    parameter	NB_INP  = 32,
-    parameter	NBF_INP	= 30,
-    parameter	NB_OUT	= 16,
-    parameter	NBF_OUT	= 15,
+module clip_round#(
+    parameter   NB_INP  = 32,
+    parameter   NBF_INP = 30,
+    parameter   NB_OUT  = 16,
+    parameter   NBF_OUT = 15,
     parameter   RND_MD  =  0  // 0: SAT-TRUNC, 1: SAT-ROUND
 )
 (
@@ -36,11 +36,6 @@ wire signed [NB_INP-1:0] w_data_im;
 wire signed [NB_OUT-1:0] w_rnd_re;
 wire signed [NB_OUT-1:0] w_rnd_im;
 
-wire [NB_XO-1:0]    aux_sat;
-wire [NBF_XO-1:0]   aux_trunc;
-wire                condition;
-wire [NB_XO-1:0]    result1;
-wire [NB_XO-1:0]    result2;
 ///////////////////////////////////////////////////////////////////////////////
 // COMBINATIONAL LOGIC
 ///////////////////////////////////////////////////////////////////////////////
