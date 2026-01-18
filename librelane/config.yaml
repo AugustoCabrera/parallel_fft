@@ -1,40 +1,56 @@
-
-DESIGN_NAME: top
+DESIGN_NAME: top_chip
 
 VERILOG_FILES:
-  - dir::rtl/SatTruncFP.v
-  - dir::rtl/btfly_2.v
-  - dir::rtl/btfly_4.v
-  - dir::rtl/btfly_8.v
-  - dir::rtl/complex_multiplier.v
-  - dir::rtl/ds_switch.v
-  - dir::rtl/fft4.v
-  - dir::rtl/fft_mdc_8p.v
-  - dir::rtl/fft_serializer.v
-  - dir::rtl/mdc8p_ctrl_in.v
-  - dir::rtl/mdc8p_ctrl_out.v
-  - dir::rtl/mdc8p_stage1.v
-  - dir::rtl/mdc8p_stage2.v
-  - dir::rtl/mdc8p_stage3.v
-  - dir::rtl/overlap_save.v
-  - dir::rtl/stride_8.v
-  - dir::rtl/twiddle_interface.v
-  - dir::rtl/xfft_cell.v
-  - dir::rtl/top.v
+  # Top / FFT
+  - dir::design/rtl/top_chip.v
+  - dir::design/rtl/fft32.v
+  - dir::design/rtl/fft8.v
+  - dir::design/rtl/fft4.v
+
+  # Datapath helpers
+  - dir::design/rtl/buffer_parallel2serial.v
+  - dir::design/rtl/clip_round.v
+  - dir::design/rtl/round.v
+  - dir::design/rtl/shift_r2.v
+  - dir::design/rtl/shift_r4.v
+
+  # MDC8P
+  - dir::design/rtl/fft_mdc_8p/fft_mdc_8p.v
+  - dir::design/rtl/fft_mdc_8p/ctrl_in/mdc8p_ctrl_in.v
+  - dir::design/rtl/fft_mdc_8p/ctrl_out/mdc8p_ctrl_out.v
+  - dir::design/rtl/fft_mdc_8p/stages/mdc8p_stage1.v
+  - dir::design/rtl/fft_mdc_8p/stages/mdc8p_stage2.v
+  - dir::design/rtl/fft_mdc_8p/stages/mdc8p_stage3.v
+
+  # Twiddles
+  - dir::design/rtl/twiddle_interface/twiddle_interface.v
+
+  # Common modules
+  - dir::design/rtl/common_modules/btfly_2.v
+  - dir::design/rtl/common_modules/btfly_4.v
+  - dir::design/rtl/common_modules/btfly_8.v
+  - dir::design/rtl/common_modules/complex_multiplier.v
+  - dir::design/rtl/common_modules/ds_switch.v
+  - dir::design/rtl/common_modules/rx_serializer.v
+  - dir::design/rtl/common_modules/tx_serializer.v
+  - dir::design/rtl/common_modules/xfft_cell.v
+  - dir::design/rtl/common_modules/signal_generator.v
+
+  # Debug / CDC / SPI
+  - dir::design/rtl/debug_unit/debug_system.v
+  - dir::design/rtl/debug_unit/debug_unit.v
+  - dir::design/rtl/debug_unit/cdc_snapshot.v   
+  - dir::design/rtl/debug_unit/spi_slave_mode0.v
 
 # Clock
 CLOCK_PORT: i_clk
 CLOCK_PERIOD: 50
 
-# SDC 
+# SDC
 PNR_SDC_FILE: dir::constraints/top.sdc
 SIGNOFF_SDC_FILE: dir::constraints/top.sdc
 
-# Floorplan: die  ~1.0 mm² ( micrones)
+# Floorplan: die ~1.0 mm² (micrones)
 FP_SIZING: absolute
 DIE_AREA: [0, 0, 1000, 1000]
-
-
-
 CORE_AREA: [20, 20, 980, 980]
-
