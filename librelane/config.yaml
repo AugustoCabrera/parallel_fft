@@ -47,8 +47,8 @@ CLOCK_PORT: i_clk
 CLOCK_PERIOD: 50
 
 # SDC
-PNR_SDC_FILE: dir::constraints/top.sdc
-SIGNOFF_SDC_FILE: dir::constraints/top.sdc
+PNR_SDC_FILE: dir::librelane/constraints/top.sdc
+SIGNOFF_SDC_FILE: dir::librelane/constraints/top.sdc
 
 # Floorplan: die ~1.0 mm² (micrones)
 FP_SIZING: absolute
