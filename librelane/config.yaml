@@ -1,0 +1,40 @@
+
+DESIGN_NAME: top
+
+VERILOG_FILES:
+  - dir::rtl/SatTruncFP.v
+  - dir::rtl/btfly_2.v
+  - dir::rtl/btfly_4.v
+  - dir::rtl/btfly_8.v
+  - dir::rtl/complex_multiplier.v
+  - dir::rtl/ds_switch.v
+  - dir::rtl/fft4.v
+  - dir::rtl/fft_mdc_8p.v
+  - dir::rtl/fft_serializer.v
+  - dir::rtl/mdc8p_ctrl_in.v
+  - dir::rtl/mdc8p_ctrl_out.v
+  - dir::rtl/mdc8p_stage1.v
+  - dir::rtl/mdc8p_stage2.v
+  - dir::rtl/mdc8p_stage3.v
+  - dir::rtl/overlap_save.v
+  - dir::rtl/stride_8.v
+  - dir::rtl/twiddle_interface.v
+  - dir::rtl/xfft_cell.v
+  - dir::rtl/top.v
+
+# Clock
+CLOCK_PORT: i_clk
+CLOCK_PERIOD: 50
+
+# SDC 
+PNR_SDC_FILE: dir::constraints/top.sdc
+SIGNOFF_SDC_FILE: dir::constraints/top.sdc
+
+# Floorplan: die  ~1.0 mm² ( micrones)
+FP_SIZING: absolute
+DIE_AREA: [0, 0, 1000, 1000]
+
+
+
+CORE_AREA: [20, 20, 980, 980]
+
