@@ -108,11 +108,13 @@ RTL_FILES=(
 # Minimal extra files (small + useful)
 EXTRA_PATHS=(
   "librelane/config.yaml"
+  "librelane/constraints/"   
   "project.yml"
   "README.md"
-  "constraints/"          # 
-  "librelane/scripts/"    # 
+  "constraints/"
+  "librelane/scripts/"
 )
+
 
 # ===== SYNC (minimal) =====
 echo "==> Syncing ONLY the selected VERILOG_FILES + minimal config into: $DEST_DIR"
