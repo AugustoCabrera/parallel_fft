@@ -52,5 +52,8 @@ SIGNOFF_SDC_FILE: dir::librelane/constraints/top.sdc
 
 # Floorplan: die ~1.0 mm² (micrones)
 FP_SIZING: absolute
-DIE_AREA: [0, 0, 1000, 1000]
-CORE_AREA: [20, 20, 980, 980]
+# DIE_AREA: [0, 0, 1000, 1000]
+# CORE_AREA: [20, 20, 980, 980]
+
+DIE_AREA: [0, 0, 850, 850]
+CORE_AREA: [20, 20, 830, 830]

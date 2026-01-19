@@ -61,6 +61,10 @@ There are two copies of the same module in the repository:
 
 ## Run: `RUN_2026-01-18_04-06-07`
 
+- DIE_AREA: [0, 0, 1000, 1000]
+- CORE_AREA: [20, 20, 980, 980]
+
+
 ### Configuration (`librelane/config.yaml`)
 
 ```yaml
@@ -214,3 +218,117 @@ Util estimate: `util ≈ stdcell_area / core_area` using 464,100 µm².
 - `DIE_AREA:  [0, 0, 850, 850]`
 - `CORE_AREA: [20, 20, 830, 830]` → 810 × 810 = 656,100 µm²
 
+
+
+----
+
+
+
+
+# Run Report (RUN_2026-01-19_15-27-49), aggressive!!!
+
+
+- DIE_AREA: [0, 0, 850, 850]    (µm)
+- CORE_AREA: [20, 20, 830, 830] (µm)
+
+
+Derived from metrics:
+- **Die bbox:** `0.0 0.0 850.0 850.0`
+- **Core bbox:** `20.16 22.68 829.92 827.82`
+- **Die area:** `722,500 µm²`
+- **Core area:** `651,970 µm²`
+- **Core utilization (stdcell):** `~0.704`
+
+---
+
+##  Run Status Summary
+
+### Flow health
+- **Flow errors:** `0`
+- **Flow warnings:** `10`
+- **Lint errors:** `0`
+- **Lint warnings:** `36`
+- **Unmapped instances:** `0`
+- **Inferred latches:** `0`
+
+### Design scale
+- **Instances (total):** `28,210`
+- **Stdcell area:** `458,878` (units per PDK)
+- **Sequential cells:** `3,497`
+- **Combinational cells:** `21,668`
+- **Clock buffers:** `727`
+- **Clock inverters:** `172`
+
+
+
+Timing is reported for three corners. **No setup/hold violations were recorded**.
+
+### Corner: nom_fast_1p32V_m40C
+- **Setup violations:** `0` (WNS/TNS = 0)
+- **Hold violations:** `0` (WNS/TNS = 0)
+- **Reported setup worst slack (r2r):** `~36.28 ns`
+- **Reported hold worst slack (r2r):** `~0.123 ns`
+
+### Corner: nom_slow_1p08V_125C
+- **Setup violations:** `0` (WNS/TNS = 0)
+- **Hold violations:** `0` (WNS/TNS = 0)
+- **Reported setup worst slack (r2r):** `~19.13 ns`
+- **Reported hold worst slack (r2r):** `~0.288 ns`
+
+### Corner: nom_typ_1p20V_25C
+- **Setup violations:** `0` (WNS/TNS = 0)
+- **Hold violations:** `0` (WNS/TNS = 0)
+- **Reported setup worst slack (r2r):** `~45.17 ns`
+- **Reported hold worst slack (r2r):** `~0.183 ns`
+
+---
+
+
+### Detailed routing DRC
+- During iterative routing:
+  - `iter:0` DRC errors: `7`
+  - `iter:1` DRC errors: `1`
+  - `iter:2` DRC errors: `1`
+  - `iter:3` DRC errors: `0`
+  - `iter:4` DRC errors: `0`
+- **Final!!** `route__drc_errors = 0`
+
+### Wire length + vias
+- **Final routed wirelength:** `651,665`
+- **Routed vias:** `163,804` (single-cut)
+
+### Antenna
+- **Antenna events during routing:** `route__antenna_violation__count = 6`
+- **Final violating nets/pins:** `0 / 0`
+- **Inserted antenna diodes:** `7`
+
+> antenna issues were detected during routing and mitigated (diode insertion).
+
+---
+
+
+Even though DRC and timing are clean, the run reports **DRV (electrical design rule)** violations in the **fast** and **slow** corners.
+
+## Corner: `nom_fast_1p32V_m40C`
+- **Max slew violations:** `1954`
+- **Max fanout violations:** `296`
+- **Max capacitance violations:** `13`
+
+## Corner: `nom_slow_1p08V_125C`
+- **Max slew violations:** `2373` → many signals have overly slow edges (excessive transition time)
+- **Max fanout violations:** `296` → many nets are driving too many loads
+- **Max capacitance violations:** `13` → some nets have excessive capacitive load
+
+## Corner: `nom_typ_1p20V_25C`
+- **Max slew violations:** `0`
+- **Max fanout violations:** `4`
+- **Max capacitance violations:** `0`
+
+## Why??
+DRV violations indicate nets exceeding library electrical limits (transition/slew, fanout, or load capacitance). While they may not cause setup/hold failures at a **50 ns** clock period, they can reduce robustness across PVT corners, worsen signal integrity, and make signoff harder to justify.
+
+In other words, the chip **meets timing and routing DRC**, but it **does not meet some library electrical constraints** when evaluated in the most demanding corners (**fast** and **slow**).
+
+## Likely root causes
+- **Global control nets** (reset/enable/control) with very large fanout and insufficient buffering.
+- **Long interconnect nets** due to floorplan/utilization, increasing RC and therefore slew.
