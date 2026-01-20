@@ -332,3 +332,130 @@ In other words, the chip **meets timing and routing DRC**, but it **does not mee
 ## Likely root causes
 - **Global control nets** (reset/enable/control) with very large fanout and insufficient buffering.
 - **Long interconnect nets** due to floorplan/utilization, increasing RC and therefore slew.
+
+
+
+
+
+
+
+----
+# RUN_2026-01-19_19-20-29 — DRC and warnings analysis
+
+- `DIE_AREA:  [0, 0, 860, 860]`
+- `CORE_AREA: [20, 20, 840, 840]`
+
+The following is observed:
+
+![alt text](run2.png)
+
+The next step is not to tweak knobs blindly, but to **identify exactly which rule fails and where**. For that, we first need to review the **markers** reported by the DRC tools (KLayout/Magic).
+
+
+
+Inspect the KLayout DRC log:
+
+```bash
+cd ~/shared/FFT/parallel_fft/runs/RUN_2026-01-19_19-20-29
+less 64-klayout-drc/klayout-drc.log
+```
+
+And we obtain:
+
+![alt text](64-klayout1.png)  
+![alt text](64-klayout2.png)
+
+- **Total number of DRC errors:** 3  
+- All violations correspond to **Metal2 (M2)**, distributed as:
+  - **1 violation of rule `M2.b`**
+  - **2 violations of rule `M2.d`**
+
+![alt text](drc1.png)
+
+To understand the exact meaning of these rules, we consult the KLayout XML report:
+
+```bash
+sed -n '740,820p' 64-klayout-drc/reports/drc_violations.klayout.xml
+```
+
+From this, we conclude that the real issue in the **860×860** run is:
+
+- **`M2.b (1)`** → *Min. Metal2 space or notch* = **0.21 µm**
+- **`M2.d (2)`** → *Min. Metal2 area* = **0.144 µm²**
+
+In other words: there is **one spacing/notch violation in M2** and **two minimum-area violations in M2**, typically associated with **very small Metal2 segments (“stubs” or “islands”)** generated during routing.
+
+The next step is to extract the **coordinates and geometry** of these 3 violations to determine whether they occur in the PDN, near the core boundary, or in a specific routing region.
+
+---
+
+In addition to the DRC, some warnings are reported. In general they are not blocking, but they should be documented:
+
+1) **`[IFP-0028] Core area ... snapped ...`**  
+OpenROAD adjusts the `CORE_AREA` to the legal grid (placement sites/tracks).  
+The point `(20.000, 20.000)` does not land on a valid location and is “snapped” to `(20.160, 22.680)`. This is not an error; it may slightly change the final layout.
+
+solution: force the initial coordinates to match the snapped (legal) values:
+
+![alt text](initial_coordinates.png)
+
+by setting:
+```bash
+CORE_AREA: [20.16, 22.68, 829.92, 827.82]
+```
+
+2) **`LEF58_ENCLOSURE ... CUTCLASS`**  
+Router warning about advanced LEF58 rules related to via *enclosure*. It indicates that some rules cannot be applied internally during routing, while final checking is performed by KLayout/Magic.
+
+solution: this is a limitation of the TritonRoute/OpenROAD internal parser/DRC engine when encountering certain LEF58_ENCLOSURE rules if the tech LEF does not include (or does not provide in the expected format) CUTCLASS information. That is why the router prints “Skipping …”. This warning is fairly common in OpenROAD/LibreLane flows.
+
+3) Long wires checker skipped  
+The “long wires” checker is skipped because no threshold was defined. This is harmless; only that report is missing.
+
+solution:
+```bash
+ERROR_ON_LONG_WIRE: false
+WIRE_LENGTH_THRESHOLD: 400   # µm (reasonable starting value)
+```
+
+4) **`VSRC_LOC_FILES` not defined (IR drop)**  
+The IR drop report may be inaccurate because voltage source locations (pads/bumps/VSRC) were not specified. This is only critical if a realistic power analysis is required.
+
+solution: VSRC_LOC_FILES is used to tell OpenROAD/LibreLane where the VDD and GND “sources” are located.
+
+run with the proposed solutions applied:
+
+```bash
+CORE_AREA: [20.16, 22.68, 829.92, 827.82]
+ERROR_ON_LONG_WIRE: false
+WIRE_LENGTH_THRESHOLD: 400   
+```
+
+![alt text](run_coordinates1.png)
+
+![alt text](run_coordinates2.png)
+
+
+
+
+
+
+
+### Observations from the previous warnings
+
+- **IFP-0028 (core area snapped)** → **NOT present** in the `grep` output ✅  
+  **Conclusion:** this warning is no longer present in this run.
+
+
+---
+
+- **LEF58_ENCLOSURE / CUTCLASS (DRT-0349)** → **Still present** ⚠️  
+  It appears repeatedly for multiple via-related layers (Cont, Via1… TopVia2).
+
+- **Long wires checker skipped** → **Changed** ⚠️  
+  It is no longer “skipped”. The checker ran and reports:  
+  `1235.56 Threshold-surpassing long wires found.`  
+  (Meaning: some nets exceed the configured wirelength threshold; this is not a DRC/LVS failure.)
+
+- **VSRC_LOC_FILES not defined (IR drop)** → **Still present** ⚠️  
+  The IR drop warning remains because voltage source locations (VDD/GND sources) were not provided.
