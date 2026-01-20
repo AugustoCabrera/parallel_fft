@@ -459,3 +459,41 @@ WIRE_LENGTH_THRESHOLD: 400
 
 - **VSRC_LOC_FILES not defined (IR drop)** → **Still present** ⚠️  
   The IR drop warning remains because voltage source locations (VDD/GND sources) were not provided.
+
+
+
+
+
+
+----
+
+## Avoid `VSRC_LOC_FILES not defined (IR drop)`
+
+To address this warning, create the IR-drop voltage source location files:
+
+```bash
+augusto@augustoCabrera ~/parallel_fft $ mkdir -p librelane/irdrop
+
+cat > librelane/irdrop/vpwr.csv <<'EOF'
+25,25,20,1.2
+825,25,20,1.2
+25,825,20,1.2
+825,825,20,1.2
+EOF
+
+cat > librelane/irdrop/vgnd.csv <<'EOF'
+25,25,20,0.0
+825,25,20,0.0
+25,825,20,0.0
+825,825,20,0.0
+EOF
+augusto@augustoCabrera ~/parallel_fft $
+```
+
+Then add the following to the YAML configuration:
+
+```yaml
+VSRC_LOC_FILES:
+  VPWR: dir::librelane/irdrop/vpwr.csv
+  VGND: dir::librelane/irdrop/vgnd.csv
+```

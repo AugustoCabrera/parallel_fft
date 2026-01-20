@@ -108,7 +108,9 @@ RTL_FILES=(
 # Minimal extra files (small + useful)
 EXTRA_PATHS=(
   "librelane/config.yaml"
-  "librelane/constraints/"   
+  "librelane/constraints/" 
+  "librelane/irdrop/vpwr.csv"
+  "librelane/irdrop/vgnd.csv"  
   "project.yml"
   "README.md"
   "constraints/"
