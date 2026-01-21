@@ -497,3 +497,7 @@ VSRC_LOC_FILES:
   VPWR: dir::librelane/irdrop/vpwr.csv
   VGND: dir::librelane/irdrop/vgnd.csv
 ```
+
+![alt text](VSRC_LOC_FILES.png)
+
+This confirms the VPWR/VGND source locations are being picked up correctly, since the warning has disappeared completely.
