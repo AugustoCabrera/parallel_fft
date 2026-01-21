@@ -501,3 +501,13 @@ VSRC_LOC_FILES:
 ![alt text](VSRC_LOC_FILES.png)
 
 This confirms the VPWR/VGND source locations are being picked up correctly, since the warning has disappeared completely.
+
+
+----
+
+
+# WireLength: “Threshold-surpassing long wires found”
+
+With an 850×850 µm die, a ~1235 µm net is entirely plausible (it can span the chip diagonally plus routing detours). This is not unusual.
+
+**Solution:** set `WIRE_LENGTH_THRESHOLD: 1300`
