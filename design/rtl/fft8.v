@@ -46,7 +46,7 @@ module fft8 #(
   localparam NB_STAGE1  = NB_INPUT + 2;
   localparam NBF_STAGE1 = NBF_INPUT;
   localparam NB_STAGE2  = NB_STAGE1 + 1;
-  localparam NBF_STAGE2 = NBF_STAGE1;
+  //localparam NBF_STAGE2 = NBF_STAGE1;
   //localparam NB_STAGE3  = NB_STAGE2 + 1;
   //localparam NBF_STAGE3 = NBF_STAGE2;
 

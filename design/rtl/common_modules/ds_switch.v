@@ -27,6 +27,7 @@ module ds_switch #(
   reg               next_state;
   reg               r_sel;
   reg  [ L - 1 : 0] flag;
+  wire [L-1:0] Lm1 = (L-1);
   //-----FSM_VALID-------------------------------
   reg               valid_cstate;
   reg               valid_nstate;
@@ -59,14 +60,12 @@ module ds_switch #(
       case (current_state)
         STATE_OFF: begin
           if (i_valid) begin
-            if (flag < (L - 1)) flag <= flag + {{L - 1{1'b0}}, 1'b1};
+            if (flag < Lm1) flag <= flag + 1'b1;
             else flag <= {L{1'b0}};
           end else flag <= {L{1'b0}};
         end
         STATE_ON: begin
-          /* verilator lint_off UNSIGNED */
-          if (flag < (L - 1)) flag <= flag + {{L - 1{1'b0}}, 1'b1};
-          /* verilator lint_on UNSIGNED */
+          if (flag < Lm1) flag <= flag + 1'b1;
           else flag <= {L{1'b0}};
         end
         default: begin
@@ -81,12 +80,12 @@ module ds_switch #(
     case (current_state)
       STATE_OFF: begin
         r_sel = 1'b0;
-        if ((flag == (L - 1)) && i_valid) next_state = STATE_ON;
+        if ((flag == Lm1) && i_valid) next_state = STATE_ON;
         else next_state = STATE_OFF;
       end
       STATE_ON: begin
         r_sel = 1'b1;
-        if ((flag == (L - 1))) next_state = STATE_OFF;
+        if (flag == Lm1) next_state = STATE_OFF;
         else next_state = STATE_ON;
       end
       default: begin
@@ -129,7 +128,7 @@ module ds_switch #(
     case (valid_cstate)
       STATE_OFF: begin
         valid = 1'b0;
-        if ((flag == (L - 1)) && i_valid) valid_nstate = STATE_ON;
+        if ((flag == Lm1) && i_valid) valid_nstate = STATE_ON;
         else valid_nstate = STATE_OFF;
       end
       STATE_ON: begin
