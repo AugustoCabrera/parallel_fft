@@ -1,4 +1,4 @@
-DESIGN_NAME: top_chip
+DESIGN_NAME: top_fft32
 
 VERILOG_FILES:
   # Top / FFT

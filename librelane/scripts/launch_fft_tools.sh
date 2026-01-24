@@ -61,10 +61,10 @@ fi
 
 mkdir -p "$DEST_DIR"
 
-# ===== EXACT RTL FILE LIST (matching your VERILOG_FILES) =====
+# ===== EXACT RTL FILE LIST=====
 RTL_FILES=(
   # Top / FFT
-  "design/rtl/top_chip.v"
+  "design/rtl/top_fft32.v"
   "design/rtl/fft32.v"
   "design/rtl/fft8.v"
   "design/rtl/fft4.v"
@@ -146,7 +146,7 @@ rsync -a --delete --prune-empty-dirs "${RSYNC_EXTRA[@]}" \
 
 rm -f "$tmp_list"
 
-# ===== Helper script to run LibreLane inside the container (your preferred style) =====
+# ===== Helper script to run LibreLane inside the container =====
 cat > "$DEST_DIR/run_librelane.sh" <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
@@ -160,11 +160,6 @@ CONFIG_PATH="${CONFIG_PATH:-$DESIGN_DIR/librelane/config.yaml}"
 # Default PDK (override with PDK_NAME=... or PDK=...)
 PDK_NAME="${PDK_NAME:-${PDK:-ihp-sg13g2}}"
 
-# If the first arg looks like a yaml path, treat it as config path (to match your habit)
-# Examples:
-#   ./run_librelane.sh
-#   ./run_librelane.sh librelane/config.yaml
-#   ./run_librelane.sh librelane/config.yaml --last-run --flow OpenInOpenROAD
 if [[ "${1:-}" == *.yaml || "${1:-}" == *.yml ]]; then
   CONFIG_PATH="$DESIGN_DIR/$1"
   shift
