@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/tmp/1eea3942486146ba87dc3780dfec0330.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/tmp/1eea3942486146ba87dc3780dfec0330.bb.v"

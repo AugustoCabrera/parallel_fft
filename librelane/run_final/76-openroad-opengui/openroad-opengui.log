@@ -1,0 +1,41 @@
+qt.glx: qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+Reading OpenROAD database at '/home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/53-odb-cellfrequencytables/top_chip.odb'…
+Reading library file at '/opt/pdks/ciel/ihp-sg13g2/versions/cb7daaa8901016cf7c5d272dfa322c41f024931f/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib'…
+Reading design constraints file at '/home/designer/shared/FFT/parallel_fft/librelane/constraints/top.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+Reading top-level design parasitics for the 'nom_typ_1p20V_25C' corner at '/home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/54-openroad-rcx/nom/top_chip.nom.spef'…
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+Found 17706 decap instances
+[ERROR GUI-0070] Ambiguous command name "gui::highlight": ::gui::highlight_inst ::gui::highlight_net.
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+
+::gui::DisplayControlMap ::gui::DisplayControlMap_clear ::gui::DisplayControlMap_del ::gui::DisplayControlMap_empty ::gui::DisplayControlMap_get ::gui::DisplayControlMap_has_key ::gui::DisplayControlMap_set ::gui::DisplayControlMap_size ::gui::add_label ::gui::add_ruler ::gui::center_at ::gui::check_display_controls ::gui::clear_focus_nets ::gui::clear_highlights ::gui::clear_labels ::gui::clear_rulers ::gui::clear_selections ::gui::create_menu_item ::gui::create_toolbar_button ::gui::delete_DisplayControlMap ::gui::delete_label ::gui::delete_ruler ::gui::design_created ::gui::dump_heatmap ::gui::enabled ::gui::fit ::gui::focus_net ::gui::get_heatmap_bool ::gui::get_heatmap_double ::gui::get_heatmap_int ::gui::get_heatmap_string ::gui::get_selection_property ::gui::gif_add ::gui::gif_end ::gui::gif_start ::gui::hide ::gui::hide_widget ::gui::highlight_inst ::gui::highlight_net ::gui::input_dialog ::gui::minimize ::gui::new_DisplayControlMap ::gui::pause ::gui::remove_focus_net ::gui::remove_menu_item ::gui::remove_toolbar_button ::gui::restore_display_controls ::gui::save_clocktree_image ::gui::save_display_controls ::gui::save_histogram_image ::gui::save_image ::gui::select ::gui::select_at ::gui::select_chart ::gui::select_clockviewer_clock ::gui::select_marker_category ::gui::select_next ::gui::select_previous ::gui::selection_add_inst ::gui::selection_add_insts ::gui::selection_add_net ::gui::selection_add_nets ::gui::selection_animate ::gui::set_display_controls ::gui::set_heatmap ::gui::set_resolution ::gui::set_title ::gui::show ::gui::show_help ::gui::show_widget ::gui::supported ::gui::timing_cone ::gui::trigger_action ::gui::unminimize ::gui::update_timing_report ::gui::zoom_in ::gui::zoom_out ::gui::zoom_to
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+Found 17706 decap instances
+[ERROR GUI-0100] No instance named _008651a8d65a0000_p_Instance found.
+[ERROR GUI-0070] GUI-0100
+Found 17706 decap instances
+[ERROR GUI-0100] No instance named _008651a8d65a0000_p_Instance found.
+[ERROR GUI-0070] GUI-0100
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+Found 17706 decap instances
+======================================
+Total chip-finishing-like instances: 30538
+Breakdown by ref_name (sorted):
+--------------------------------------
+   13724  sg13g2_decap_8
+    6591  sg13g2_fill_1
+    6241  sg13g2_fill_2
+    3982  sg13g2_decap_4
+======================================
+Found 30538 fill/decap instances
+Done highlighting fill/decap.
+[ERROR GUI-0070] invalid command name "<"
+[ERROR GUI-0070] invalid command name "A"
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)

@@ -1,0 +1,48 @@
+310. Printing statistics.
+
+=== top_chip ===
+
+   Number of wires:              26007
+   Number of wire bits:          26007
+   Number of public wires:        4557
+   Number of public wire bits:    4557
+   Number of ports:                  8
+   Number of port bits:              8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              26001
+     sg13g2_a21o_1                 597
+     sg13g2_a21oi_1               1860
+     sg13g2_a221oi_1                47
+     sg13g2_a22oi_1                331
+     sg13g2_and2_1                 436
+     sg13g2_and3_1                 160
+     sg13g2_and4_1                 101
+     sg13g2_buf_1                    4
+     sg13g2_dfrbpq_1              3503
+     sg13g2_ebufn_2                  1
+     sg13g2_inv_1                  717
+     sg13g2_mux2_1                1613
+     sg13g2_mux4_1                 136
+     sg13g2_nand2_1               2018
+     sg13g2_nand2b_1               836
+     sg13g2_nand3_1                600
+     sg13g2_nand3b_1                30
+     sg13g2_nand4_1                133
+     sg13g2_nor2_1                1581
+     sg13g2_nor2b_1                829
+     sg13g2_nor3_1                 256
+     sg13g2_nor4_1                  19
+     sg13g2_o21ai_1               1977
+     sg13g2_or2_1                  290
+     sg13g2_or3_1                  159
+     sg13g2_or4_1                    5
+     sg13g2_tiehi                 3250
+     sg13g2_tielo                   20
+     sg13g2_xnor2_1               2802
+     sg13g2_xor2_1                1690
+
+   Chip area for module '\top_chip': 408808.096200
+     of which used for sequential elements: 171607.766400 (41.98%)
+

@@ -1,0 +1,33 @@
+Reading timing models for corner nom_typ_1p20V_25C…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/opt/pdks/ciel/ihp-sg13g2/versions/cb7daaa8901016cf7c5d272dfa322c41f024931f/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib'…
+Reading OpenROAD database at '/home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/53-odb-cellfrequencytables/top_chip.odb'…
+Reading design constraints file at '/home/designer/shared/FFT/parallel_fft/librelane/constraints/top.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+%OL_CREATE_REPORT irdrop.rpt
++ analyze_power_grid -net VPWR -voltage_file /home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/56-openroad-irdropreport/net-VPWR.csv -vsrc /home/designer/shared/FFT/parallel_fft/librelane/irdrop/vpwr.csv
+[INFO PSM-0040] All shapes on net VPWR are connected.
+[INFO PSM-0015] Reading location of sources from: /home/designer/shared/FFT/parallel_fft/librelane/irdrop/vpwr.csv.
+########## IR report #################
+Net              : VPWR
+Corner           : nom_typ_1p20V_25C
+Supply voltage   : 1.20e+00 V
+Worstcase voltage: 1.20e+00 V
+Average voltage  : 1.20e+00 V
+Average IR drop  : 1.99e-03 V
+Worstcase IR drop: 2.49e-03 V
+Percentage drop  : 0.21 %
+######################################
++ analyze_power_grid -net VGND -voltage_file /home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/56-openroad-irdropreport/net-VGND.csv -vsrc /home/designer/shared/FFT/parallel_fft/librelane/irdrop/vgnd.csv
+[INFO PSM-0040] All shapes on net VGND are connected.
+[INFO PSM-0015] Reading location of sources from: /home/designer/shared/FFT/parallel_fft/librelane/irdrop/vgnd.csv.
+########## IR report #################
+Net              : VGND
+Corner           : nom_typ_1p20V_25C
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 2.45e-03 V
+Average voltage  : 1.97e-03 V
+Average IR drop  : 1.97e-03 V
+Worstcase IR drop: 2.45e-03 V
+Percentage drop  : 0.20 %
+######################################
+%OL_END_REPORT

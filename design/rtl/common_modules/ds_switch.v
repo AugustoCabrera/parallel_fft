@@ -60,12 +60,16 @@ module ds_switch #(
       case (current_state)
         STATE_OFF: begin
           if (i_valid) begin
+            /* verilator lint_off UNSIGNED */
             if (flag < Lm1) flag <= flag + 1'b1;
+            /* verilator lint_on UNSIGNED */
             else flag <= {L{1'b0}};
           end else flag <= {L{1'b0}};
         end
         STATE_ON: begin
+          /* verilator lint_off UNSIGNED */
           if (flag < Lm1) flag <= flag + 1'b1;
+          /* verilator lint_on UNSIGNED */
           else flag <= {L{1'b0}};
         end
         default: begin

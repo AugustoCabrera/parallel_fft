@@ -1,0 +1,323 @@
+
+Magic 8.3 revision 528 - Compiled on Sat Jun 21 19:19:56 UTC 2025.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Sourcing design .magicrc for technology ihp-sg13g2 ...
+2 Magic internal units = 1 Lambda
+Input style sg13g2(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    fillfet sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pad seal thruvia 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading "/nix/store/sfc122jplczjy5i6pd5radwb3k94mh33-python3.12-librelane-3.0.0.dev45/lib/python3.12/site-packages/librelane/scripts/magic/wrapper.tcl" from command line.
+> lef read /opt/pdks/ciel/ihp-sg13g2/versions/cb7daaa8901016cf7c5d272dfa322c41f024931f/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_tech.lef
+Reading LEF data from file /opt/pdks/ciel/ihp-sg13g2/versions/cb7daaa8901016cf7c5d272dfa322c41f024931f/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_tech.lef.
+This action cannot be undone.
+LEF read, Line 79 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 80 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 81 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 87 (Message): Unknown keyword "MINIMUMCUT" in LEF file; ignoring.
+LEF read, Line 91 (Message): Unknown keyword "ANTENNACUMAREARATIO" in LEF file; ignoring.
+LEF read, Line 92 (Message): Unknown keyword "ANTENNACUMDIFFAREARATIO" in LEF file; ignoring.
+LEF read, Line 121 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 122 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 123 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 129 (Message): Unknown keyword "MINIMUMCUT" in LEF file; ignoring.
+LEF read, Line 134 (Message): Unknown keyword "ANTENNACUMAREARATIO" in LEF file; ignoring.
+LEF read, Line 135 (Message): Unknown keyword "ANTENNACUMDIFFAREARATIO" in LEF file; ignoring.
+LEF read, Line 163 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 164 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 165 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 171 (Message): Unknown keyword "MINIMUMCUT" in LEF file; ignoring.
+LEF read, Line 176 (Message): Unknown keyword "ANTENNACUMAREARATIO" in LEF file; ignoring.
+LEF read, Line 177 (Message): Unknown keyword "ANTENNACUMDIFFAREARATIO" in LEF file; ignoring.
+LEF read, Line 205 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 206 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 207 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 213 (Message): Unknown keyword "MINIMUMCUT" in LEF file; ignoring.
+LEF read, Line 218 (Message): Unknown keyword "ANTENNACUMAREARATIO" in LEF file; ignoring.
+LEF read, Line 219 (Message): Unknown keyword "ANTENNACUMDIFFAREARATIO" in LEF file; ignoring.
+LEF read, Line 246 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 247 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 248 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 254 (Message): Unknown keyword "MINIMUMCUT" in LEF file; ignoring.
+LEF read, Line 259 (Message): Unknown keyword "ANTENNACUMAREARATIO" in LEF file; ignoring.
+LEF read, Line 260 (Message): Unknown keyword "ANTENNACUMDIFFAREARATIO" in LEF file; ignoring.
+LEF read, Line 286 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 287 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 288 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 293 (Message): Unknown keyword "ANTENNACUMAREARATIO" in LEF file; ignoring.
+LEF read, Line 294 (Message): Unknown keyword "ANTENNACUMDIFFAREARATIO" in LEF file; ignoring.
+LEF read, Line 320 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 321 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 322 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 327 (Message): Unknown keyword "ANTENNACUMAREARATIO" in LEF file; ignoring.
+LEF read, Line 328 (Message): Unknown keyword "ANTENNACUMDIFFAREARATIO" in LEF file; ignoring.
+LEF read: Processed 1197 lines.
+> lef read /opt/pdks/ciel/ihp-sg13g2/versions/cb7daaa8901016cf7c5d272dfa322c41f024931f/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_stdcell.lef
+Reading LEF data from file /opt/pdks/ciel/ihp-sg13g2/versions/cb7daaa8901016cf7c5d272dfa322c41f024931f/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_stdcell.lef.
+This action cannot be undone.
+LEF read, Line 6473 (Message): Unknown keyword "ANTENNAMAXCUTCAR" in LEF file; ignoring.
+LEF read: Processed 7927 lines.
+> def read /home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/53-odb-cellfrequencytables/top_chip.def -noblockage -labels
+Reading DEF data from file /home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/53-odb-cellfrequencytables/top_chip.def.
+This action cannot be undone.
+  Processed 6 vias total.
+  Processed 58867 subcell instances total.
+  Processed 10 pins total.
+  Processed 2 special nets total.
+  Processed 28108 nets total.
+DEF read: Processed 458754 lines.
+Moving label "_02069_" from metal2 to via2 in cell top_chip.
+Moving label "_02085_" from metal3 to via2 in cell top_chip.
+Moving label "_02092_" from metal2 to via2 in cell top_chip.
+Moving label "_02110_" from metal2 to via1 in cell top_chip.
+Moving label "_02245_" from metal2 to via1 in cell top_chip.
+Moving label "_02357_" from metal2 to via1 in cell top_chip.
+Moving label "_02398_" from metal2 to via1 in cell top_chip.
+Moving label "_02611_" from metal3 to via2 in cell top_chip.
+Moving label "_02622_" from metal2 to via1 in cell top_chip.
+Moving label "_02840_" from metal2 to via1 in cell top_chip.
+Moving label "_02955_" from metal2 to via1 in cell top_chip.
+Moving label "_03032_" from metal2 to via2 in cell top_chip.
+Moving label "_03107_" from metal3 to via2 in cell top_chip.
+Moving label "_03138_" from metal2 to via2 in cell top_chip.
+Moving label "_03224_" from metal3 to via2 in cell top_chip.
+Moving label "_03232_" from metal2 to via1 in cell top_chip.
+Moving label "_03254_" from metal2 to via1 in cell top_chip.
+Moving label "_03506_" from metal2 to via2 in cell top_chip.
+Moving label "_03584_" from metal2 to via2 in cell top_chip.
+Moving label "_03657_" from metal2 to via1 in cell top_chip.
+Moving label "_03742_" from metal3 to via2 in cell top_chip.
+Moving label "_03867_" from metal2 to via2 in cell top_chip.
+Moving label "_03980_" from metal2 to via2 in cell top_chip.
+Moving label "_04002_" from metal2 to via1 in cell top_chip.
+Moving label "_04034_" from metal2 to via2 in cell top_chip.
+Moving label "_04221_" from metal2 to via1 in cell top_chip.
+Moving label "_04245_" from metal2 to via2 in cell top_chip.
+Moving label "_04272_" from metal3 to via2 in cell top_chip.
+Moving label "_04292_" from metal2 to via2 in cell top_chip.
+Moving label "_04320_" from metal2 to via2 in cell top_chip.
+Moving label "_04405_" from metal2 to via1 in cell top_chip.
+Moving label "_04433_" from metal2 to via1 in cell top_chip.
+Moving label "_04458_" from metal2 to via1 in cell top_chip.
+Moving label "_04462_" from metal2 to via1 in cell top_chip.
+Moving label "_04586_" from metal3 to via2 in cell top_chip.
+Moving label "_04689_" from metal2 to via1 in cell top_chip.
+Moving label "_04704_" from metal2 to via2 in cell top_chip.
+Moving label "_04752_" from metal3 to via2 in cell top_chip.
+Moving label "_04796_" from metal3 to via2 in cell top_chip.
+Moving label "_05351_" from metal3 to via2 in cell top_chip.
+Moving label "_05461_" from metal2 to via1 in cell top_chip.
+Moving label "_05655_" from metal2 to via2 in cell top_chip.
+Moving label "_05699_" from metal3 to via2 in cell top_chip.
+Moving label "_06145_" from metal3 to via2 in cell top_chip.
+Moving label "_06219_" from metal3 to via3 in cell top_chip.
+Moving label "_06222_" from metal2 to via1 in cell top_chip.
+Moving label "_06247_" from metal2 to via1 in cell top_chip.
+Moving label "_06421_" from metal2 to via2 in cell top_chip.
+Moving label "_06464_" from metal2 to via1 in cell top_chip.
+Moving label "_06487_" from metal2 to via2 in cell top_chip.
+Moving label "_06513_" from metal3 to via2 in cell top_chip.
+Moving label "_06617_" from metal2 to via2 in cell top_chip.
+Moving label "_06643_" from metal3 to via2 in cell top_chip.
+Moving label "_06669_" from metal3 to via2 in cell top_chip.
+Moving label "_07092_" from metal2 to via2 in cell top_chip.
+Moving label "_07333_" from metal2 to via2 in cell top_chip.
+Moving label "_07336_" from metal2 to via2 in cell top_chip.
+Moving label "_07362_" from metal2 to via1 in cell top_chip.
+Moving label "_07689_" from metal2 to via2 in cell top_chip.
+Moving label "_07705_" from metal2 to via2 in cell top_chip.
+Moving label "_07714_" from metal2 to via1 in cell top_chip.
+Moving label "_07791_" from metal2 to via1 in cell top_chip.
+Moving label "_07798_" from metal2 to via2 in cell top_chip.
+Moving label "_07805_" from metal2 to via2 in cell top_chip.
+Moving label "_07875_" from metal2 to via2 in cell top_chip.
+Moving label "_07892_" from metal2 to via1 in cell top_chip.
+Moving label "_07922_" from metal2 to via2 in cell top_chip.
+Moving label "_07936_" from metal2 to via2 in cell top_chip.
+Moving label "_07955_" from metal2 to via2 in cell top_chip.
+Moving label "_07994_" from metal2 to via2 in cell top_chip.
+Moving label "_08027_" from metal2 to via2 in cell top_chip.
+Moving label "_08080_" from metal2 to via1 in cell top_chip.
+Moving label "_08102_" from metal2 to via2 in cell top_chip.
+Moving label "_08128_" from metal2 to via2 in cell top_chip.
+Moving label "_08233_" from metal2 to via1 in cell top_chip.
+Moving label "_08319_" from metal2 to via2 in cell top_chip.
+Moving label "_08650_" from metal2 to via2 in cell top_chip.
+Moving label "_08657_" from metal2 to via2 in cell top_chip.
+Moving label "_08699_" from metal3 to via2 in cell top_chip.
+Moving label "_09284_" from metal2 to via1 in cell top_chip.
+Moving label "_09572_" from metal2 to via1 in cell top_chip.
+Moving label "_09612_" from metal2 to via1 in cell top_chip.
+Moving label "_09765_" from metal2 to via2 in cell top_chip.
+Moving label "_09982_" from metal2 to via2 in cell top_chip.
+Moving label "_10217_" from metal2 to via2 in cell top_chip.
+Moving label "_10277_" from metal2 to via2 in cell top_chip.
+Moving label "_10438_" from metal2 to via1 in cell top_chip.
+Moving label "_10456_" from metal2 to via2 in cell top_chip.
+Moving label "_10484_" from metal2 to via2 in cell top_chip.
+Moving label "_10559_" from metal2 to via2 in cell top_chip.
+Moving label "_10643_" from metal2 to via2 in cell top_chip.
+Moving label "_11022_" from metal2 to via2 in cell top_chip.
+Moving label "_11176_" from metal2 to via2 in cell top_chip.
+Moving label "_11210_" from metal2 to via2 in cell top_chip.
+Moving label "_11433_" from metal3 to via2 in cell top_chip.
+Moving label "_11711_" from metal2 to via1 in cell top_chip.
+Moving label "_11776_" from metal3 to via2 in cell top_chip.
+Moving label "_11911_" from metal2 to via1 in cell top_chip.
+Moving label "_12012_" from metal2 to via2 in cell top_chip.
+Moving label "_12032_" from metal3 to via2 in cell top_chip.
+Moving label "_12097_" from metal3 to via2 in cell top_chip.
+Moving label "_12275_" from metal3 to via2 in cell top_chip.
+Moving label "_12303_" from metal2 to via2 in cell top_chip.
+Moving label "_12322_" from metal2 to via2 in cell top_chip.
+Moving label "_12347_" from metal2 to via2 in cell top_chip.
+Moving label "_12457_" from metal2 to via2 in cell top_chip.
+Moving label "_12458_" from metal2 to via2 in cell top_chip.
+Moving label "_12486_" from metal2 to via2 in cell top_chip.
+Moving label "_12529_" from metal3 to via2 in cell top_chip.
+Moving label "_12729_" from metal2 to via1 in cell top_chip.
+Moving label "_12737_" from metal2 to via2 in cell top_chip.
+Moving label "_12773_" from metal2 to via2 in cell top_chip.
+Moving label "_12789_" from metal2 to via2 in cell top_chip.
+Moving label "_13150_" from metal3 to via2 in cell top_chip.
+Moving label "_13237_" from metal2 to via2 in cell top_chip.
+Moving label "_13341_" from metal2 to via1 in cell top_chip.
+Moving label "_13375_" from metal3 to via2 in cell top_chip.
+Moving label "_13462_" from metal3 to via2 in cell top_chip.
+Moving label "_13683_" from metal2 to via1 in cell top_chip.
+Moving label "_13720_" from metal2 to via1 in cell top_chip.
+Moving label "_13972_" from metal2 to via1 in cell top_chip.
+Moving label "_14073_" from metal3 to via2 in cell top_chip.
+Moving label "_14508_" from metal2 to via1 in cell top_chip.
+Moving label "_14524_" from metal2 to via2 in cell top_chip.
+Moving label "_14719_" from metal2 to via2 in cell top_chip.
+Moving label "_14849_" from metal2 to via1 in cell top_chip.
+Moving label "_15478_" from metal2 to via2 in cell top_chip.
+Moving label "_15548_" from metal3 to via2 in cell top_chip.
+Moving label "_15711_" from metal2 to via1 in cell top_chip.
+Moving label "_15848_" from metal2 to via1 in cell top_chip.
+Moving label "_15883_" from metal2 to via2 in cell top_chip.
+Moving label "_16461_" from metal2 to via2 in cell top_chip.
+Moving label "_16927_" from metal2 to via1 in cell top_chip.
+Moving label "_17153_" from metal2 to via2 in cell top_chip.
+Moving label "_17239_" from metal3 to via2 in cell top_chip.
+Moving label "_17262_" from metal2 to via2 in cell top_chip.
+Moving label "_17359_" from metal2 to via1 in cell top_chip.
+Moving label "_17668_" from metal3 to via2 in cell top_chip.
+Moving label "_17705_" from metal3 to via2 in cell top_chip.
+Moving label "_17785_" from metal2 to via2 in cell top_chip.
+Moving label "_17848_" from metal2 to via1 in cell top_chip.
+Moving label "_17867_" from metal2 to via2 in cell top_chip.
+Moving label "_17880_" from metal2 to via2 in cell top_chip.
+Moving label "_18090_" from metal2 to via2 in cell top_chip.
+Moving label "clknet_7_114__leaf_i_clk" from metal2 to via2 in cell top_chip.
+Moving label "clknet_leaf_0_i_clk" from metal2 to via1 in cell top_chip.
+Moving label "clknet_leaf_274_i_clk" from metal3 to via2 in cell top_chip.
+Moving label "clknet_leaf_328_i_clk" from metal2 to via2 in cell top_chip.
+Moving label "clknet_leaf_77_i_clk" from metal3 to via2 in cell top_chip.
+Moving label "net2871" from metal2 to via2 in cell top_chip.
+Moving label "net2889" from metal2 to via2 in cell top_chip.
+Moving label "net2892" from metal2 to via2 in cell top_chip.
+Moving label "net2904" from metal2 to via2 in cell top_chip.
+Moving label "net2948" from metal2 to via2 in cell top_chip.
+Moving label "net2959" from metal2 to via1 in cell top_chip.
+Moving label "net3109" from metal2 to via2 in cell top_chip.
+Moving label "net3176" from metal2 to via2 in cell top_chip.
+Moving label "net3181" from metal2 to via2 in cell top_chip.
+Moving label "net3215" from metal2 to via2 in cell top_chip.
+Moving label "net3217" from metal3 to via2 in cell top_chip.
+Moving label "net3453" from metal2 to via2 in cell top_chip.
+Moving label "net3558" from metal2 to via1 in cell top_chip.
+Moving label "net3745" from metal2 to via2 in cell top_chip.
+Moving label "net3965" from metal2 to via1 in cell top_chip.
+Moving label "net4014" from metal3 to via2 in cell top_chip.
+Moving label "net4023" from metal2 to via2 in cell top_chip.
+Moving label "u_debug_sys.u_spi_slave.next_rx\[9\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.mdc_ff3_data0_im\[7\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.twiddle_data3_re\[3\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_buffer_parallel2serial.mem_im\[1\]\[6\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_buffer_parallel2serial.mem_im\[3\]\[1\]" from metal3 to via2 in cell top_chip.
+Moving label "u_fft_core.u_buffer_parallel2serial.mem_re\[10\]\[6\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_buffer_parallel2serial.mem_re\[20\]\[1\]" from metal2 to via1 in cell top_chip.
+Moving label "u_fft_core.u_buffer_parallel2serial.mem_re\[7\]\[4\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_buffer_parallel2serial.mem_re\[9\]\[3\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft4.s1_od_sub_re\[0\]" from metal2 to via1 in cell top_chip.
+Moving label "u_fft_core.u_fft4.s1_od_sub_re\[4\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc0.u_mdc8p_stage1.xfft_cell_route1.r_pp2_mult_i\[0\]\[11\]" from metal2 to via1 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc0.u_mdc8p_stage1.xfft_cell_route1.r_pp2_mult_r\[0\]\[2\]" from metal2 to via1 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc1.u_mdc8p_stage1.r_data0_i\[4\]" from metal3 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc1.u_mdc8p_stage1.xfft_cell_route1.r_pp2_mult_i\[1\]\[18\]" from metal3 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc1.u_mdc8p_stage1.xfft_cell_route1.r_pp2_mult_i\[1\]\[6\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc1.u_mdc8p_stage1.xfft_cell_route1.r_pp2_mult_r\[0\]\[5\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc1.u_mdc8p_stage2.r_data0_r\[7\]" from metal3 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc2.u_mdc8p_stage1.xfft_cell_route1.r_pp2_mult_i\[1\]\[14\]" from metal2 to via1 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc2.u_mdc8p_stage2.ds_switch_stage1.o_data_0r\[1\]" from metal2 to via1 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc3.u_mdc8p_stage1.ds_switch_stage1.o_valid" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc3.u_mdc8p_stage1.ds_switch_stage1.r_idata_i\[1\]\[9\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc3.u_mdc8p_stage1.xfft_cell_route1.r_pp1_data_i\[3\]" from metal3 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc3.u_mdc8p_stage2.ds_switch_stage1.o_data_0i\[5\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc3.u_mdc8p_stage2.r_data0_i\[9\]" from metal3 to via2 in cell top_chip.
+Moving label "u_fft_core.u_fft8_mdc3.u_mdc8p_stage2.r_data0_r\[1\]" from metal3 to via2 in cell top_chip.
+Moving label "u_fft_core.u_shift_r2_fft2.data_im_q\[12\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_shift_r2_fft3.data_im_q\[17\]" from metal3 to via2 in cell top_chip.
+Moving label "u_fft_core.u_shift_r4.data_im_q\[53\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_shift_r4.data_re_q\[116\]" from metal2 to via2 in cell top_chip.
+Moving label "u_fft_core.u_shift_r4.data_re_q\[164\]" from metal3 to via2 in cell top_chip.
+Moving label "u_fft_core.u_twiddle_interface.mult3_re\[6\]" from metal6 to via6 in cell top_chip.
+Moving label "u_rx.current_cnt\[4\]" from metal2 to via1 in cell top_chip.
+Processing top_chip
+Extracting sg13g2_decap_8 into sg13g2_decap_8.ext:
+Extracting sg13g2_fill_2 into sg13g2_fill_2.ext:
+Extracting sg13g2_fill_1 into sg13g2_fill_1.ext:
+Extracting sg13g2_dfrbpq_1 into sg13g2_dfrbpq_1.ext:
+Extracting sg13g2_decap_4 into sg13g2_decap_4.ext:
+Extracting sg13g2_mux2_1 into sg13g2_mux2_1.ext:
+Extracting sg13g2_tiehi into sg13g2_tiehi.ext:
+Extracting sg13g2_nand2_1 into sg13g2_nand2_1.ext:
+Extracting sg13g2_a21oi_1 into sg13g2_a21oi_1.ext:
+Extracting sg13g2_xor2_1 into sg13g2_xor2_1.ext:
+Extracting sg13g2_nor2_1 into sg13g2_nor2_1.ext:
+Extracting sg13g2_xnor2_1 into sg13g2_xnor2_1.ext:
+Extracting sg13g2_or2_1 into sg13g2_or2_1.ext:
+Extracting sg13g2_nand2b_1 into sg13g2_nand2b_1.ext:
+Extracting sg13g2_nand4_1 into sg13g2_nand4_1.ext:
+Extracting sg13g2_or3_1 into sg13g2_or3_1.ext:
+Extracting sg13g2_nor3_1 into sg13g2_nor3_1.ext:
+Extracting sg13g2_o21ai_1 into sg13g2_o21ai_1.ext:
+Extracting sg13g2_nor2b_1 into sg13g2_nor2b_1.ext:
+Extracting sg13g2_and2_1 into sg13g2_and2_1.ext:
+Extracting sg13g2_nand3_1 into sg13g2_nand3_1.ext:
+Extracting sg13g2_and4_1 into sg13g2_and4_1.ext:
+Extracting sg13g2_a22oi_1 into sg13g2_a22oi_1.ext:
+Extracting sg13g2_a21o_1 into sg13g2_a21o_1.ext:
+Extracting sg13g2_inv_1 into sg13g2_inv_1.ext:
+Extracting sg13g2_dfrbpq_2 into sg13g2_dfrbpq_2.ext:
+Extracting sg13g2_buf_8 into sg13g2_buf_8.ext:
+Extracting sg13g2_and3_1 into sg13g2_and3_1.ext:
+Extracting sg13g2_nor2_2 into sg13g2_nor2_2.ext:
+Extracting sg13g2_inv_4 into sg13g2_inv_4.ext:
+Extracting sg13g2_a21oi_2 into sg13g2_a21oi_2.ext:
+Extracting sg13g2_nand3b_1 into sg13g2_nand3b_1.ext:
+Extracting sg13g2_inv_2 into sg13g2_inv_2.ext:
+Extracting sg13g2_nor2b_2 into sg13g2_nor2b_2.ext:
+Extracting sg13g2_a21o_2 into sg13g2_a21o_2.ext:
+Extracting sg13g2_nand2_2 into sg13g2_nand2_2.ext:
+Extracting sg13g2_a221oi_1 into sg13g2_a221oi_1.ext:
+Extracting sg13g2_and3_2 into sg13g2_and3_2.ext:
+Extracting sg13g2_buf_1 into sg13g2_buf_1.ext:
+Extracting sg13g2_inv_8 into sg13g2_inv_8.ext:
+Extracting sg13g2_nor4_1 into sg13g2_nor4_1.ext:
+Extracting sg13g2_buf_2 into sg13g2_buf_2.ext:
+Extracting sg13g2_nand2b_2 into sg13g2_nand2b_2.ext:
+Extracting sg13g2_nor4_2 into sg13g2_nor4_2.ext:
+Extracting sg13g2_ebufn_8 into sg13g2_ebufn_8.ext:
+Extracting sg13g2_nor3_2 into sg13g2_nor3_2.ext:
+Extracting sg13g2_or4_1 into sg13g2_or4_1.ext:
+Extracting sg13g2_tielo into sg13g2_tielo.ext:
+Extracting sg13g2_mux4_1 into sg13g2_mux4_1.ext:
+Extracting sg13g2_antennanp into sg13g2_antennanp.ext:
+Extracting top_chip into top_chip.ext:
+exttospice finished.

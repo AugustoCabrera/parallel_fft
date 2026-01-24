@@ -1,0 +1,26 @@
++ analyze_power_grid -net VPWR -voltage_file /home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/56-openroad-irdropreport/net-VPWR.csv -vsrc /home/designer/shared/FFT/parallel_fft/librelane/irdrop/vpwr.csv
+[INFO PSM-0040] All shapes on net VPWR are connected.
+[INFO PSM-0015] Reading location of sources from: /home/designer/shared/FFT/parallel_fft/librelane/irdrop/vpwr.csv.
+########## IR report #################
+Net              : VPWR
+Corner           : nom_typ_1p20V_25C
+Supply voltage   : 1.20e+00 V
+Worstcase voltage: 1.20e+00 V
+Average voltage  : 1.20e+00 V
+Average IR drop  : 1.99e-03 V
+Worstcase IR drop: 2.49e-03 V
+Percentage drop  : 0.21 %
+######################################
++ analyze_power_grid -net VGND -voltage_file /home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/56-openroad-irdropreport/net-VGND.csv -vsrc /home/designer/shared/FFT/parallel_fft/librelane/irdrop/vgnd.csv
+[INFO PSM-0040] All shapes on net VGND are connected.
+[INFO PSM-0015] Reading location of sources from: /home/designer/shared/FFT/parallel_fft/librelane/irdrop/vgnd.csv.
+########## IR report #################
+Net              : VGND
+Corner           : nom_typ_1p20V_25C
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 2.45e-03 V
+Average voltage  : 1.97e-03 V
+Average IR drop  : 1.97e-03 V
+Worstcase IR drop: 2.45e-03 V
+Percentage drop  : 0.20 %
+######################################

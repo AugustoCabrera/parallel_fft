@@ -1,0 +1,971 @@
+qt.glx: qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+Reading OpenROAD database at '/home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/53-odb-cellfrequencytables/top_chip.odb'…
+Reading library file at '/opt/pdks/ciel/ihp-sg13g2/versions/cb7daaa8901016cf7c5d272dfa322c41f024931f/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib'…
+Reading design constraints file at '/home/designer/shared/FFT/parallel_fft/librelane/constraints/top.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+Reading top-level design parasitics for the 'nom_typ_1p20V_25C' corner at '/home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/54-openroad-rcx/nom/top_chip.nom.spef'…
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
+[WARNING STA-0361] net 'clk' not found.
+[ERROR GUI-0101] No net named  found.
+[ERROR GUI-0070] GUI-0101
+[ERROR GUI-0070] invalid command name "report_clocks"
+Found 702 nets matching *clk*
+_b070d4e352560000_p_Net
+_c885d4e352560000_p_Net
+_a887d4e352560000_p_Net
+_60ede4e352560000_p_Net
+_d8ede4e352560000_p_Net
+_50eee4e352560000_p_Net
+_c8eee4e352560000_p_Net
+_40efe4e352560000_p_Net
+_b8efe4e352560000_p_Net
+_30f0e4e352560000_p_Net
+_a8f0e4e352560000_p_Net
+_20f1e4e352560000_p_Net
+_98f1e4e352560000_p_Net
+_10f2e4e352560000_p_Net
+_88f2e4e352560000_p_Net
+_00f3e4e352560000_p_Net
+_78f3e4e352560000_p_Net
+_f0f3e4e352560000_p_Net
+_68f4e4e352560000_p_Net
+_e0f4e4e352560000_p_Net
+_58f5e4e352560000_p_Net
+_d0f5e4e352560000_p_Net
+_48f6e4e352560000_p_Net
+_c0f6e4e352560000_p_Net
+_38f7e4e352560000_p_Net
+_b0f7e4e352560000_p_Net
+_28f8e4e352560000_p_Net
+_a0f8e4e352560000_p_Net
+_18f9e4e352560000_p_Net
+_90f9e4e352560000_p_Net
+_08fae4e352560000_p_Net
+_80fae4e352560000_p_Net
+_f8fae4e352560000_p_Net
+_70fbe4e352560000_p_Net
+_e8fbe4e352560000_p_Net
+_60fce4e352560000_p_Net
+_d8fce4e352560000_p_Net
+_50fde4e352560000_p_Net
+_c8fde4e352560000_p_Net
+_40fee4e352560000_p_Net
+_b8fee4e352560000_p_Net
+_30ffe4e352560000_p_Net
+_a8ffe4e352560000_p_Net
+_2000e5e352560000_p_Net
+_9800e5e352560000_p_Net
+_1001e5e352560000_p_Net
+_8801e5e352560000_p_Net
+_0002e5e352560000_p_Net
+_7802e5e352560000_p_Net
+_f002e5e352560000_p_Net
+_6803e5e352560000_p_Net
+_e003e5e352560000_p_Net
+_5804e5e352560000_p_Net
+_d004e5e352560000_p_Net
+_4805e5e352560000_p_Net
+_c005e5e352560000_p_Net
+_3806e5e352560000_p_Net
+_b006e5e352560000_p_Net
+_2807e5e352560000_p_Net
+_a007e5e352560000_p_Net
+_1808e5e352560000_p_Net
+_9008e5e352560000_p_Net
+_0809e5e352560000_p_Net
+_8009e5e352560000_p_Net
+_f809e5e352560000_p_Net
+_700ae5e352560000_p_Net
+_e80ae5e352560000_p_Net
+_600be5e352560000_p_Net
+_d80be5e352560000_p_Net
+_500ce5e352560000_p_Net
+_c80ce5e352560000_p_Net
+_400de5e352560000_p_Net
+_b80de5e352560000_p_Net
+_300ee5e352560000_p_Net
+_a80ee5e352560000_p_Net
+_200fe5e352560000_p_Net
+_980fe5e352560000_p_Net
+_1010e5e352560000_p_Net
+_8810e5e352560000_p_Net
+_0011e5e352560000_p_Net
+_7811e5e352560000_p_Net
+_f011e5e352560000_p_Net
+_6812e5e352560000_p_Net
+_e012e5e352560000_p_Net
+_5813e5e352560000_p_Net
+_d013e5e352560000_p_Net
+_4814e5e352560000_p_Net
+_c014e5e352560000_p_Net
+_3815e5e352560000_p_Net
+_b015e5e352560000_p_Net
+_2816e5e352560000_p_Net
+_a016e5e352560000_p_Net
+_1817e5e352560000_p_Net
+_9017e5e352560000_p_Net
+_0818e5e352560000_p_Net
+_8018e5e352560000_p_Net
+_f818e5e352560000_p_Net
+_7019e5e352560000_p_Net
+_e819e5e352560000_p_Net
+_601ae5e352560000_p_Net
+_d81ae5e352560000_p_Net
+_501be5e352560000_p_Net
+_c81be5e352560000_p_Net
+_401ce5e352560000_p_Net
+_b81ce5e352560000_p_Net
+_301de5e352560000_p_Net
+_a81de5e352560000_p_Net
+_201ee5e352560000_p_Net
+_981ee5e352560000_p_Net
+_101fe5e352560000_p_Net
+_881fe5e352560000_p_Net
+_2030e5e352560000_p_Net
+_9830e5e352560000_p_Net
+_1031e5e352560000_p_Net
+_8831e5e352560000_p_Net
+_0032e5e352560000_p_Net
+_7832e5e352560000_p_Net
+_f032e5e352560000_p_Net
+_6833e5e352560000_p_Net
+_e033e5e352560000_p_Net
+_5834e5e352560000_p_Net
+_d034e5e352560000_p_Net
+_4835e5e352560000_p_Net
+_c035e5e352560000_p_Net
+_3836e5e352560000_p_Net
+_b036e5e352560000_p_Net
+_2837e5e352560000_p_Net
+_a037e5e352560000_p_Net
+_1838e5e352560000_p_Net
+_9038e5e352560000_p_Net
+_0839e5e352560000_p_Net
+_8039e5e352560000_p_Net
+_f839e5e352560000_p_Net
+_703ae5e352560000_p_Net
+_e83ae5e352560000_p_Net
+_603be5e352560000_p_Net
+_d83be5e352560000_p_Net
+_503ce5e352560000_p_Net
+_c83ce5e352560000_p_Net
+_403de5e352560000_p_Net
+_b83de5e352560000_p_Net
+_303ee5e352560000_p_Net
+_a83ee5e352560000_p_Net
+_203fe5e352560000_p_Net
+_983fe5e352560000_p_Net
+_1040e5e352560000_p_Net
+_8840e5e352560000_p_Net
+_0041e5e352560000_p_Net
+_7841e5e352560000_p_Net
+_f041e5e352560000_p_Net
+_6842e5e352560000_p_Net
+_e042e5e352560000_p_Net
+_5843e5e352560000_p_Net
+_d043e5e352560000_p_Net
+_4844e5e352560000_p_Net
+_c044e5e352560000_p_Net
+_3845e5e352560000_p_Net
+_b045e5e352560000_p_Net
+_2846e5e352560000_p_Net
+_a046e5e352560000_p_Net
+_1847e5e352560000_p_Net
+_9047e5e352560000_p_Net
+_0848e5e352560000_p_Net
+_8048e5e352560000_p_Net
+_f848e5e352560000_p_Net
+_7049e5e352560000_p_Net
+_e849e5e352560000_p_Net
+_604ae5e352560000_p_Net
+_d84ae5e352560000_p_Net
+_504be5e352560000_p_Net
+_c84be5e352560000_p_Net
+_404ce5e352560000_p_Net
+_b84ce5e352560000_p_Net
+_304de5e352560000_p_Net
+_a84de5e352560000_p_Net
+_204ee5e352560000_p_Net
+_984ee5e352560000_p_Net
+_104fe5e352560000_p_Net
+_884fe5e352560000_p_Net
+_0050e5e352560000_p_Net
+_7850e5e352560000_p_Net
+_f050e5e352560000_p_Net
+_6851e5e352560000_p_Net
+_e051e5e352560000_p_Net
+_5852e5e352560000_p_Net
+_d052e5e352560000_p_Net
+_4853e5e352560000_p_Net
+_c053e5e352560000_p_Net
+_3854e5e352560000_p_Net
+_b054e5e352560000_p_Net
+_2855e5e352560000_p_Net
+_a055e5e352560000_p_Net
+_1856e5e352560000_p_Net
+_9056e5e352560000_p_Net
+_0857e5e352560000_p_Net
+_8057e5e352560000_p_Net
+_f857e5e352560000_p_Net
+_7058e5e352560000_p_Net
+_e858e5e352560000_p_Net
+_6059e5e352560000_p_Net
+_d859e5e352560000_p_Net
+_505ae5e352560000_p_Net
+_c85ae5e352560000_p_Net
+_405be5e352560000_p_Net
+_b85be5e352560000_p_Net
+_305ce5e352560000_p_Net
+_a85ce5e352560000_p_Net
+_205de5e352560000_p_Net
+_985de5e352560000_p_Net
+_105ee5e352560000_p_Net
+_885ee5e352560000_p_Net
+_005fe5e352560000_p_Net
+_785fe5e352560000_p_Net
+_f05fe5e352560000_p_Net
+_6860e5e352560000_p_Net
+_e060e5e352560000_p_Net
+_5861e5e352560000_p_Net
+_d061e5e352560000_p_Net
+_4862e5e352560000_p_Net
+_c062e5e352560000_p_Net
+_3863e5e352560000_p_Net
+_b063e5e352560000_p_Net
+_2864e5e352560000_p_Net
+_a064e5e352560000_p_Net
+_1865e5e352560000_p_Net
+_9065e5e352560000_p_Net
+_0866e5e352560000_p_Net
+_8066e5e352560000_p_Net
+_f866e5e352560000_p_Net
+_7067e5e352560000_p_Net
+_e867e5e352560000_p_Net
+_6068e5e352560000_p_Net
+_d868e5e352560000_p_Net
+_5069e5e352560000_p_Net
+_c869e5e352560000_p_Net
+_406ae5e352560000_p_Net
+_b86ae5e352560000_p_Net
+_306be5e352560000_p_Net
+_a86be5e352560000_p_Net
+_407ce5e352560000_p_Net
+_b87ce5e352560000_p_Net
+_307de5e352560000_p_Net
+_a87de5e352560000_p_Net
+_207ee5e352560000_p_Net
+_987ee5e352560000_p_Net
+_107fe5e352560000_p_Net
+_887fe5e352560000_p_Net
+_0080e5e352560000_p_Net
+_7880e5e352560000_p_Net
+_f080e5e352560000_p_Net
+_6881e5e352560000_p_Net
+_e081e5e352560000_p_Net
+_5882e5e352560000_p_Net
+_d082e5e352560000_p_Net
+_4883e5e352560000_p_Net
+_c083e5e352560000_p_Net
+_3884e5e352560000_p_Net
+_b084e5e352560000_p_Net
+_2885e5e352560000_p_Net
+_a085e5e352560000_p_Net
+_1886e5e352560000_p_Net
+_9086e5e352560000_p_Net
+_0887e5e352560000_p_Net
+_8087e5e352560000_p_Net
+_f887e5e352560000_p_Net
+_7088e5e352560000_p_Net
+_e888e5e352560000_p_Net
+_6089e5e352560000_p_Net
+_d889e5e352560000_p_Net
+_508ae5e352560000_p_Net
+_c88ae5e352560000_p_Net
+_408be5e352560000_p_Net
+_b88be5e352560000_p_Net
+_308ce5e352560000_p_Net
+_a88ce5e352560000_p_Net
+_208de5e352560000_p_Net
+_988de5e352560000_p_Net
+_108ee5e352560000_p_Net
+_888ee5e352560000_p_Net
+_008fe5e352560000_p_Net
+_788fe5e352560000_p_Net
+_f08fe5e352560000_p_Net
+_6890e5e352560000_p_Net
+_e090e5e352560000_p_Net
+_5891e5e352560000_p_Net
+_d091e5e352560000_p_Net
+_4892e5e352560000_p_Net
+_c092e5e352560000_p_Net
+_3893e5e352560000_p_Net
+_b093e5e352560000_p_Net
+_2894e5e352560000_p_Net
+_a094e5e352560000_p_Net
+_1895e5e352560000_p_Net
+_9095e5e352560000_p_Net
+_0896e5e352560000_p_Net
+_8096e5e352560000_p_Net
+_f896e5e352560000_p_Net
+_7097e5e352560000_p_Net
+_e897e5e352560000_p_Net
+_6098e5e352560000_p_Net
+_d898e5e352560000_p_Net
+_5099e5e352560000_p_Net
+_c899e5e352560000_p_Net
+_409ae5e352560000_p_Net
+_b89ae5e352560000_p_Net
+_309be5e352560000_p_Net
+_a89be5e352560000_p_Net
+_209ce5e352560000_p_Net
+_989ce5e352560000_p_Net
+_109de5e352560000_p_Net
+_889de5e352560000_p_Net
+_009ee5e352560000_p_Net
+_789ee5e352560000_p_Net
+_f09ee5e352560000_p_Net
+_689fe5e352560000_p_Net
+_e09fe5e352560000_p_Net
+_58a0e5e352560000_p_Net
+_d0a0e5e352560000_p_Net
+_48a1e5e352560000_p_Net
+_c0a1e5e352560000_p_Net
+_38a2e5e352560000_p_Net
+_b0a2e5e352560000_p_Net
+_28a3e5e352560000_p_Net
+_a0a3e5e352560000_p_Net
+_18a4e5e352560000_p_Net
+_90a4e5e352560000_p_Net
+_08a5e5e352560000_p_Net
+_80a5e5e352560000_p_Net
+_f8a5e5e352560000_p_Net
+_70a6e5e352560000_p_Net
+_e8a6e5e352560000_p_Net
+_60a7e5e352560000_p_Net
+_d8a7e5e352560000_p_Net
+_50a8e5e352560000_p_Net
+_c8a8e5e352560000_p_Net
+_40a9e5e352560000_p_Net
+_b8a9e5e352560000_p_Net
+_30aae5e352560000_p_Net
+_a8aae5e352560000_p_Net
+_20abe5e352560000_p_Net
+_98abe5e352560000_p_Net
+_10ace5e352560000_p_Net
+_88ace5e352560000_p_Net
+_00ade5e352560000_p_Net
+_78ade5e352560000_p_Net
+_f0ade5e352560000_p_Net
+_68aee5e352560000_p_Net
+_e0aee5e352560000_p_Net
+_58afe5e352560000_p_Net
+_d0afe5e352560000_p_Net
+_48b0e5e352560000_p_Net
+_c0b0e5e352560000_p_Net
+_38b1e5e352560000_p_Net
+_b0b1e5e352560000_p_Net
+_28b2e5e352560000_p_Net
+_a0b2e5e352560000_p_Net
+_18b3e5e352560000_p_Net
+_90b3e5e352560000_p_Net
+_08b4e5e352560000_p_Net
+_80b4e5e352560000_p_Net
+_f8b4e5e352560000_p_Net
+_70b5e5e352560000_p_Net
+_e8b5e5e352560000_p_Net
+_60b6e5e352560000_p_Net
+_d8b6e5e352560000_p_Net
+_50b7e5e352560000_p_Net
+_c8b7e5e352560000_p_Net
+_60c8e5e352560000_p_Net
+_d8c8e5e352560000_p_Net
+_50c9e5e352560000_p_Net
+_c8c9e5e352560000_p_Net
+_40cae5e352560000_p_Net
+_b8cae5e352560000_p_Net
+_30cbe5e352560000_p_Net
+_a8cbe5e352560000_p_Net
+_20cce5e352560000_p_Net
+_98cce5e352560000_p_Net
+_10cde5e352560000_p_Net
+_88cde5e352560000_p_Net
+_00cee5e352560000_p_Net
+_78cee5e352560000_p_Net
+_f0cee5e352560000_p_Net
+_68cfe5e352560000_p_Net
+_e0cfe5e352560000_p_Net
+_58d0e5e352560000_p_Net
+_d0d0e5e352560000_p_Net
+_48d1e5e352560000_p_Net
+_c0d1e5e352560000_p_Net
+_38d2e5e352560000_p_Net
+_b0d2e5e352560000_p_Net
+_28d3e5e352560000_p_Net
+_a0d3e5e352560000_p_Net
+_18d4e5e352560000_p_Net
+_90d4e5e352560000_p_Net
+_08d5e5e352560000_p_Net
+_80d5e5e352560000_p_Net
+_f8d5e5e352560000_p_Net
+_70d6e5e352560000_p_Net
+_e8d6e5e352560000_p_Net
+_60d7e5e352560000_p_Net
+_d8d7e5e352560000_p_Net
+_50d8e5e352560000_p_Net
+_c8d8e5e352560000_p_Net
+_40d9e5e352560000_p_Net
+_b8d9e5e352560000_p_Net
+_30dae5e352560000_p_Net
+_a8dae5e352560000_p_Net
+_20dbe5e352560000_p_Net
+_98dbe5e352560000_p_Net
+_10dce5e352560000_p_Net
+_88dce5e352560000_p_Net
+_00dde5e352560000_p_Net
+_78dde5e352560000_p_Net
+_f0dde5e352560000_p_Net
+_68dee5e352560000_p_Net
+_e0dee5e352560000_p_Net
+_58dfe5e352560000_p_Net
+_d0dfe5e352560000_p_Net
+_48e0e5e352560000_p_Net
+_c0e0e5e352560000_p_Net
+_38e1e5e352560000_p_Net
+_b0e1e5e352560000_p_Net
+_28e2e5e352560000_p_Net
+_a0e2e5e352560000_p_Net
+_18e3e5e352560000_p_Net
+_90e3e5e352560000_p_Net
+_08e4e5e352560000_p_Net
+_80e4e5e352560000_p_Net
+_f8e4e5e352560000_p_Net
+_70e5e5e352560000_p_Net
+_e8e5e5e352560000_p_Net
+_60e6e5e352560000_p_Net
+_d8e6e5e352560000_p_Net
+_50e7e5e352560000_p_Net
+_c8e7e5e352560000_p_Net
+_40e8e5e352560000_p_Net
+_b8e8e5e352560000_p_Net
+_30e9e5e352560000_p_Net
+_a8e9e5e352560000_p_Net
+_20eae5e352560000_p_Net
+_98eae5e352560000_p_Net
+_10ebe5e352560000_p_Net
+_88ebe5e352560000_p_Net
+_00ece5e352560000_p_Net
+_78ece5e352560000_p_Net
+_f0ece5e352560000_p_Net
+_68ede5e352560000_p_Net
+_e0ede5e352560000_p_Net
+_58eee5e352560000_p_Net
+_d0eee5e352560000_p_Net
+_48efe5e352560000_p_Net
+_c0efe5e352560000_p_Net
+_38f0e5e352560000_p_Net
+_b0f0e5e352560000_p_Net
+_28f1e5e352560000_p_Net
+_a0f1e5e352560000_p_Net
+_18f2e5e352560000_p_Net
+_90f2e5e352560000_p_Net
+_08f3e5e352560000_p_Net
+_80f3e5e352560000_p_Net
+_f8f3e5e352560000_p_Net
+_70f4e5e352560000_p_Net
+_e8f4e5e352560000_p_Net
+_60f5e5e352560000_p_Net
+_d8f5e5e352560000_p_Net
+_50f6e5e352560000_p_Net
+_c8f6e5e352560000_p_Net
+_40f7e5e352560000_p_Net
+_b8f7e5e352560000_p_Net
+_30f8e5e352560000_p_Net
+_a8f8e5e352560000_p_Net
+_20f9e5e352560000_p_Net
+_98f9e5e352560000_p_Net
+_10fae5e352560000_p_Net
+_88fae5e352560000_p_Net
+_00fbe5e352560000_p_Net
+_78fbe5e352560000_p_Net
+_f0fbe5e352560000_p_Net
+_68fce5e352560000_p_Net
+_e0fce5e352560000_p_Net
+_58fde5e352560000_p_Net
+_d0fde5e352560000_p_Net
+_48fee5e352560000_p_Net
+_c0fee5e352560000_p_Net
+_38ffe5e352560000_p_Net
+_b0ffe5e352560000_p_Net
+_2800e6e352560000_p_Net
+_a000e6e352560000_p_Net
+_1801e6e352560000_p_Net
+_9001e6e352560000_p_Net
+_0802e6e352560000_p_Net
+_8002e6e352560000_p_Net
+_f802e6e352560000_p_Net
+_7003e6e352560000_p_Net
+_e803e6e352560000_p_Net
+_8014e6e352560000_p_Net
+_f814e6e352560000_p_Net
+_7015e6e352560000_p_Net
+_e815e6e352560000_p_Net
+_6016e6e352560000_p_Net
+_d816e6e352560000_p_Net
+_5017e6e352560000_p_Net
+_c817e6e352560000_p_Net
+_4018e6e352560000_p_Net
+_b818e6e352560000_p_Net
+_3019e6e352560000_p_Net
+_a819e6e352560000_p_Net
+_201ae6e352560000_p_Net
+_981ae6e352560000_p_Net
+_101be6e352560000_p_Net
+_881be6e352560000_p_Net
+_001ce6e352560000_p_Net
+_781ce6e352560000_p_Net
+_f01ce6e352560000_p_Net
+_681de6e352560000_p_Net
+_e01de6e352560000_p_Net
+_581ee6e352560000_p_Net
+_d01ee6e352560000_p_Net
+_481fe6e352560000_p_Net
+_c01fe6e352560000_p_Net
+_3820e6e352560000_p_Net
+_b020e6e352560000_p_Net
+_2821e6e352560000_p_Net
+_a021e6e352560000_p_Net
+_1822e6e352560000_p_Net
+_9022e6e352560000_p_Net
+_0823e6e352560000_p_Net
+_8023e6e352560000_p_Net
+_f823e6e352560000_p_Net
+_7024e6e352560000_p_Net
+_e824e6e352560000_p_Net
+_6025e6e352560000_p_Net
+_d825e6e352560000_p_Net
+_5026e6e352560000_p_Net
+_c826e6e352560000_p_Net
+_4027e6e352560000_p_Net
+_b827e6e352560000_p_Net
+_3028e6e352560000_p_Net
+_a828e6e352560000_p_Net
+_2029e6e352560000_p_Net
+_9829e6e352560000_p_Net
+_102ae6e352560000_p_Net
+_882ae6e352560000_p_Net
+_002be6e352560000_p_Net
+_782be6e352560000_p_Net
+_f02be6e352560000_p_Net
+_682ce6e352560000_p_Net
+_e02ce6e352560000_p_Net
+_582de6e352560000_p_Net
+_d02de6e352560000_p_Net
+_482ee6e352560000_p_Net
+_c02ee6e352560000_p_Net
+_382fe6e352560000_p_Net
+_b02fe6e352560000_p_Net
+_2830e6e352560000_p_Net
+_a030e6e352560000_p_Net
+_1831e6e352560000_p_Net
+_9031e6e352560000_p_Net
+_0832e6e352560000_p_Net
+_8032e6e352560000_p_Net
+_f832e6e352560000_p_Net
+_7033e6e352560000_p_Net
+_e833e6e352560000_p_Net
+_6034e6e352560000_p_Net
+_d834e6e352560000_p_Net
+_5035e6e352560000_p_Net
+_c835e6e352560000_p_Net
+_4036e6e352560000_p_Net
+_b836e6e352560000_p_Net
+_3037e6e352560000_p_Net
+_a837e6e352560000_p_Net
+_2038e6e352560000_p_Net
+_9838e6e352560000_p_Net
+_1039e6e352560000_p_Net
+_8839e6e352560000_p_Net
+_003ae6e352560000_p_Net
+_783ae6e352560000_p_Net
+_f03ae6e352560000_p_Net
+_683be6e352560000_p_Net
+_e03be6e352560000_p_Net
+_583ce6e352560000_p_Net
+_d03ce6e352560000_p_Net
+_483de6e352560000_p_Net
+_c03de6e352560000_p_Net
+_383ee6e352560000_p_Net
+_b03ee6e352560000_p_Net
+_283fe6e352560000_p_Net
+_a03fe6e352560000_p_Net
+_1840e6e352560000_p_Net
+_9040e6e352560000_p_Net
+_0841e6e352560000_p_Net
+_8041e6e352560000_p_Net
+_f841e6e352560000_p_Net
+_7042e6e352560000_p_Net
+_e842e6e352560000_p_Net
+_6043e6e352560000_p_Net
+_d843e6e352560000_p_Net
+_5044e6e352560000_p_Net
+_c844e6e352560000_p_Net
+_4045e6e352560000_p_Net
+_b845e6e352560000_p_Net
+_3046e6e352560000_p_Net
+_a846e6e352560000_p_Net
+_2047e6e352560000_p_Net
+_9847e6e352560000_p_Net
+_1048e6e352560000_p_Net
+_8848e6e352560000_p_Net
+_0049e6e352560000_p_Net
+_7849e6e352560000_p_Net
+_f049e6e352560000_p_Net
+_684ae6e352560000_p_Net
+_e04ae6e352560000_p_Net
+_584be6e352560000_p_Net
+_d04be6e352560000_p_Net
+_484ce6e352560000_p_Net
+_c04ce6e352560000_p_Net
+_384de6e352560000_p_Net
+_b04de6e352560000_p_Net
+_284ee6e352560000_p_Net
+_a04ee6e352560000_p_Net
+_184fe6e352560000_p_Net
+_904fe6e352560000_p_Net
+_0850e6e352560000_p_Net
+_a060e6e352560000_p_Net
+_1861e6e352560000_p_Net
+_9061e6e352560000_p_Net
+_0862e6e352560000_p_Net
+_8062e6e352560000_p_Net
+_f862e6e352560000_p_Net
+_7063e6e352560000_p_Net
+_e863e6e352560000_p_Net
+_6064e6e352560000_p_Net
+_d864e6e352560000_p_Net
+_5065e6e352560000_p_Net
+_c865e6e352560000_p_Net
+_4066e6e352560000_p_Net
+_b866e6e352560000_p_Net
+_3067e6e352560000_p_Net
+_a867e6e352560000_p_Net
+_2068e6e352560000_p_Net
+_9868e6e352560000_p_Net
+_1069e6e352560000_p_Net
+_8869e6e352560000_p_Net
+_006ae6e352560000_p_Net
+_786ae6e352560000_p_Net
+_f06ae6e352560000_p_Net
+_686be6e352560000_p_Net
+_e06be6e352560000_p_Net
+_586ce6e352560000_p_Net
+_d06ce6e352560000_p_Net
+_486de6e352560000_p_Net
+_c06de6e352560000_p_Net
+_386ee6e352560000_p_Net
+_b06ee6e352560000_p_Net
+_286fe6e352560000_p_Net
+_a06fe6e352560000_p_Net
+_1870e6e352560000_p_Net
+_9070e6e352560000_p_Net
+_0871e6e352560000_p_Net
+_8071e6e352560000_p_Net
+_f871e6e352560000_p_Net
+_7072e6e352560000_p_Net
+_e872e6e352560000_p_Net
+_6073e6e352560000_p_Net
+_d873e6e352560000_p_Net
+_5074e6e352560000_p_Net
+_c874e6e352560000_p_Net
+_4075e6e352560000_p_Net
+_b875e6e352560000_p_Net
+_3076e6e352560000_p_Net
+_a876e6e352560000_p_Net
+_2077e6e352560000_p_Net
+_9877e6e352560000_p_Net
+_1078e6e352560000_p_Net
+_8878e6e352560000_p_Net
+_0079e6e352560000_p_Net
+_7879e6e352560000_p_Net
+_f079e6e352560000_p_Net
+_687ae6e352560000_p_Net
+_e07ae6e352560000_p_Net
+_587be6e352560000_p_Net
+_d07be6e352560000_p_Net
+_487ce6e352560000_p_Net
+_c07ce6e352560000_p_Net
+_387de6e352560000_p_Net
+_b07de6e352560000_p_Net
+_287ee6e352560000_p_Net
+_a07ee6e352560000_p_Net
+_187fe6e352560000_p_Net
+_907fe6e352560000_p_Net
+_0880e6e352560000_p_Net
+_8080e6e352560000_p_Net
+_f880e6e352560000_p_Net
+_7081e6e352560000_p_Net
+_e881e6e352560000_p_Net
+_6082e6e352560000_p_Net
+_d882e6e352560000_p_Net
+_5083e6e352560000_p_Net
+_c883e6e352560000_p_Net
+_4084e6e352560000_p_Net
+_b884e6e352560000_p_Net
+_3085e6e352560000_p_Net
+Candidates: 702
+Top 20 nets by connected pins:
+ 1)     17 pins  _a819e6e352560000_p_Net
+ 2)     17 pins  _201ae6e352560000_p_Net
+ 3)     17 pins  _981ae6e352560000_p_Net
+ 4)     17 pins  _101be6e352560000_p_Net
+ 5)      9 pins  _b070d4e352560000_p_Net
+ 6)      9 pins  _60ede4e352560000_p_Net
+ 7)      9 pins  _d8ede4e352560000_p_Net
+ 8)      9 pins  _50eee4e352560000_p_Net
+ 9)      9 pins  _c8eee4e352560000_p_Net
+10)      9 pins  _40efe4e352560000_p_Net
+11)      9 pins  _b8efe4e352560000_p_Net
+12)      9 pins  _30f0e4e352560000_p_Net
+13)      9 pins  _a8f0e4e352560000_p_Net
+14)      9 pins  _20f1e4e352560000_p_Net
+15)      9 pins  _88f2e4e352560000_p_Net
+16)      9 pins  _00f3e4e352560000_p_Net
+17)      9 pins  _78f3e4e352560000_p_Net
+18)      9 pins  _f0f3e4e352560000_p_Net
+19)      9 pins  _d0f5e4e352560000_p_Net
+20)      9 pins  _b0f7e4e352560000_p_Net
+Highlighting best candidate: _a819e6e352560000_p_Net
+[ERROR GUI-0101] No net named _a819e6e352560000_p_Net found.
+[ERROR GUI-0070] GUI-0101
+Ports matching *clk*: _e00f41e652560000_p_Port _a01341e652560000_p_Port
+Using port: _e00f41e652560000_p_Port
+[ERROR GUI-0070] invalid command name "get_db_nets"
+Found 3046 buf/inv instances
+Clock-like ports: _e00f41e652560000_p_Port _a01341e652560000_p_Port
+Using clock port: _e00f41e652560000_p_Port
+[ERROR STA-0100] unsupported object type Port.
+[ERROR GUI-0070] STA-0100
+Clock-like ports: _e00f41e652560000_p_Port _a01341e652560000_p_Port
+Using clock port: _e00f41e652560000_p_Port
+[ERROR STA-0100] unsupported object type Port.
+[ERROR GUI-0070] STA-0100
+Clock-like ports: _e00f41e652560000_p_Port _a01341e652560000_p_Port
+Using clock port: _e00f41e652560000_p_Port
+[ERROR STA-0100] unsupported object type Port.
+[ERROR GUI-0070] STA-0100
+[ERROR GUI-0070] invalid command name "get_db_ports"
+Found 2 port objects
+  port_obj=_e00f41e652560000_p_Port  name=i_clk
+  port_obj=_a01341e652560000_p_Port  name=i_spi_sclk
+clk_port obj=_e00f41e652560000_p_Port name=i_clk
+[ERROR STA-0100] unsupported object type Port.
+[ERROR GUI-0070] STA-0100
+Found 4966 potential clock pins (CK/CLK/C)
+Highlighting 4966 sink instances
+CTS-ish candidates: 3046
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+[WARNING STA-0101] object 'NULL' not found.
+High-fanout CTS buffer candidates: 0
+[ERROR GUI-0070] invalid command name "report_clocks"
+[ERROR GUI-0070] invalid command name "report_clocks"
+[ERROR GUI-0070] invalid command name "report_clocks"
+[ERROR GUI-0070] invalid command name "..."
+[ERROR GUI-0070] can't read "clk_tree_net": no such variable
+Top 10 nets by number of CK/CLK/C pins:
+ 1)      8 sinks  _f80ce2e352560000_p_Net
+ 2)      8 sinks  _c84be5e352560000_p_Net
+ 3)      8 sinks  _404ce5e352560000_p_Net
+ 4)      8 sinks  _504be5e352560000_p_Net
+ 5)      8 sinks  _b84ce5e352560000_p_Net
+ 6)      8 sinks  _204ee5e352560000_p_Net
+ 7)      8 sinks  _984ee5e352560000_p_Net
+ 8)      8 sinks  _604ae5e352560000_p_Net
+ 9)      8 sinks  _0050e5e352560000_p_Net
+10)      8 sinks  _104fe5e352560000_p_Net
+Selected clock-tree net handle: _f80ce2e352560000_p_Net
+CTS-ish insts on selected net: 1
+Done highlighting CTS-ish cells of the main clock candidate.
+[WARNING GUI-0076] qglx_findConfig: Failed to finding matching FBConfig for QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SingleBuffer, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile)
