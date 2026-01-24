@@ -1,9 +1,0 @@
-{
-    "json_h": "/home/designer/shared/FFT/parallel_fft/runs/RUN_2026-01-23_18-35-33/05-yosys-jsonheader/top_chip.h.json",
-    "metrics": {
-        "design__lint_error__count": 0,
-        "design__lint_timing_construct__count": 0,
-        "design__lint_warning__count": 0,
-        "design__inferred_latch__count": 0
-    }
-}
