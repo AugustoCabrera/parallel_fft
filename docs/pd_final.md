@@ -34,14 +34,16 @@ All signoff checks passed (**DRC / LVS / Antenna**) and timing closed with **zer
 
 All numerical results below are taken from:
 
-- `runs/RUN_2026-01-23_18-35-33/`  (`librelane/run_final`)
+👉 **Download:**  
+🔗 **https://drive.google.com/file/d/1n3HdCXurSAwhTBV4xbTFWmmR2EoYGsu7/view?usp=sharing**
 
+_Path:_ `runs/RUN_2026-01-23_18-35-33/` 
 ---
 
 
-# Area Sweep Summary and Final Selection
+## Area Sweep Summary and Final Selection
 
-This document summarizes multiple physical design runs performed with different **die/core area configurations** and **effective utilization levels** using the LibreLane flow.  
+Multiple physical design runs performed with different **die/core area configurations** and **effective utilization levels** using the LibreLane flow.  
 All configurations listed below were evaluated up to signoff (DRC/LVS/Antenna), unless otherwise noted.
 
 The objective of this sweep was to identify the **minimum viable area** while maintaining robustness and to justify the final selected configuration with sufficient margin for future RTL modifications.
@@ -300,7 +302,7 @@ During the detailed routing stage, the following warnings were reported in `warn
 These warnings originate from **OpenROAD detailed routing (DRT)** when parsing **LEF58 enclosure rules** that do not explicitly define a `CUTCLASS`.  
 This is a **known and expected limitation** for this PDK/LEF combination.
 
-**PUEDE SER POR CORTE DE METAL !!!!1**
+
 
 > The `DRT-0349` warnings related to `LEF58_ENCLOSURE with no CUTCLASS` are expected for this PDK and do not impact routing correctness or signoff quality. Since the design passes all post-route DRC, LVS, antenna, and timing checks, these warnings are considered non-blocking and safely ignored.
 
